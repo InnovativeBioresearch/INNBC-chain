@@ -10,15 +10,11 @@ https://github.com/InnovativeBioresearch/INNBC-chain
 
 ## 1. Licensing Structure
 
-<!-- START ALPHA CHANGE 3918 -- distinguish permitted network operation from restricted commercialization -->
-
 This repository contains separately licensed material:
 
 1. Retained upstream material originally licensed under Apache-2.0 remains governed by Apache-2.0.
 2. Original copyrightable INNBC Chain additions and modifications identified below are subject to the permissions and conditions in section 3. Official-network operation is permitted without software licensing fees or a separate written agreement. Noncommercial derivatives are permitted subject to attribution and the other stated conditions. Restricted commercialization requires a separate written agreement.
 3. Third-party dependencies and material expressly licensed separately retain their respective licenses.
-
-<!-- FINISH ALPHA CHANGE 3918 -- distinguish permitted network operation from restricted commercialization -->
 
 The Apache license text is reproduced unchanged in [LICENSE](LICENSE). Its inclusion preserves the license applicable to the Apache-covered portions.
 
@@ -29,8 +25,6 @@ The proprietary material covered by this notice consists of original copyrightab
 [README.md — Major Enhancements Over Polygon Edge](README.md#major-enhancements-over-polygon-edge).
 
 That section currently contains 136 numbered entries describing the project's architecture, enhancements, corrections, hardening, tooling, and operational work.
-
-<!-- START ALPHA CHANGE 3919 -- identify original implementation and packaging material -->
 
 Those descriptions, their source-file references, and the corresponding ALPHA CHANGE annotations help identify the INNBC-specific implementation.
 
@@ -48,8 +42,6 @@ These references identify locations containing original contributions. They do n
 
 This notice applies only to original copyrightable material actually present in the relevant distribution and owned by the stated copyright holder.
 
-<!-- FINISH ALPHA CHANGE 3919 -- identify original implementation and packaging material -->
-
 In particular:
 
 - a feature description does not establish ownership of all code implementing that feature;
@@ -60,8 +52,6 @@ In particular:
 - generated files retain any applicable rights and licensing of the material from which they were generated.
 
 This notice concerns copyrightable expression. It does not claim exclusive rights over general technical ideas, public standards, protocol concepts, upstream techniques, public blockchain facts, or independently authored implementations.
-
-<!-- START ALPHA CHANGE 3920 -- permit official network use and attributed noncommercial derivatives -->
 
 ## 3. Permitted Uses and Restricted Commercialization
 
@@ -164,8 +154,6 @@ The agreement must come from Jonathan Fior or an authorized representative of th
 
 Requests should identify the repository revision, the material concerned, and the intended use.
 
-<!-- FINISH ALPHA CHANGE 3920 -- permit official network use and attributed noncommercial derivatives -->
-
 ## 4. Upstream and Separately Licensed Material
 
 The proprietary terms above do not restrict the rights provided by Apache-2.0 for retained Apache-covered material.
@@ -208,8 +196,6 @@ A separate written agreement governs the material and permissions it expressly c
 
 This notice does not determine the legal effect or licensing scope of an earlier publication.
 
-<!-- START ALPHA CHANGE 3921 -- distinguish accurate attribution from branding endorsement -->
-
 ## 8. Branding
 
 Accurate attribution and reasonable descriptive references to INNBC Chain, Jonathan Fior, and Innovative Bioresearch, including the attribution required by section 3.3, are permitted under this notice.
@@ -217,8 +203,6 @@ Accurate attribution and reasonable descriptive references to INNBC Chain, Jonat
 This permission does not authorize misleading claims of endorsement or official status, or grant permission to reuse reserved logo artwork.
 
 INNBC, INNBC Chain, Innovative Bioresearch, and associated logos remain subject to the applicable rights of their owners. This statement does not assert that any mark is registered.
-
-<!-- FINISH ALPHA CHANGE 3921 -- distinguish accurate attribution from branding endorsement -->
 
 ## 9. Warranty
 
