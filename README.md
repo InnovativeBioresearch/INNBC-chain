@@ -10812,22 +10812,24 @@ Current deployment and operation must follow the INNBC-specific documentation in
 
 ## License
 
-This repository remains subject to the Apache License, Version 2.0, inherited from the upstream Polygon Edge codebase.
+<!-- START ALPHA CHANGE 3917 -- document mixed licensing and original INNBC rights -->
 
-Copyright 2022 Polygon Technology
+This repository contains material governed by different licensing terms.
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at:
+Retained Apache-licensed upstream material remains under Apache-2.0. The unchanged Apache license text is reproduced in [LICENSE](LICENSE).
 
-```text
-http://www.apache.org/licenses/LICENSE-2.0
-```
+Upstream attribution includes:
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Copyright 2022 Polygon Technology.
+
+Original copyrightable INNBC Chain additions and modifications are governed by [LICENSING.md](LICENSING.md) and require a separate written license agreement, except where another applicable permission already exists.
+
+The [Major Enhancements Over Polygon Edge](#major-enhancements-over-polygon-edge) section currently documents 136 numbered entries. The licensing notice explains how those descriptions and the corresponding source annotations relate to the original implementation material.
+
+Third-party dependencies and material expressly licensed separately retain their respective licenses. These notices do not revoke rights already validly granted under an applicable license or agreement.
+
+The customized distribution is source available with mixed licensing and is not represented as wholly Apache-licensed or wholly open source.
+
+<!-- FINISH ALPHA CHANGE 3917 -- document mixed licensing and original INNBC rights -->
 
 <!-- FINISH ALPHA CHANGE 1471 -- document INNBC architecture and enhancements over Polygon Edge -->
