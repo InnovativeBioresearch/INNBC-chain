@@ -10,11 +10,15 @@ https://github.com/InnovativeBioresearch/INNBC-chain
 
 ## 1. Licensing Structure
 
+<!-- START ALPHA CHANGE 3918 -- distinguish permitted network operation from restricted commercialization -->
+
 This repository contains separately licensed material:
 
 1. Retained upstream material originally licensed under Apache-2.0 remains governed by Apache-2.0.
-2. Original copyrightable INNBC Chain additions and modifications identified below are proprietary and require a separate written license agreement, except where another applicable permission already exists.
+2. Original copyrightable INNBC Chain additions and modifications identified below are subject to the permissions and conditions in section 3. Official-network operation is permitted without software licensing fees or a separate written agreement. Noncommercial derivatives are permitted subject to attribution and the other stated conditions. Restricted commercialization requires a separate written agreement.
 3. Third-party dependencies and material expressly licensed separately retain their respective licenses.
+
+<!-- FINISH ALPHA CHANGE 3918 -- distinguish permitted network operation from restricted commercialization -->
 
 The Apache license text is reproduced unchanged in [LICENSE](LICENSE). Its inclusion preserves the license applicable to the Apache-covered portions.
 
@@ -26,9 +30,25 @@ The proprietary material covered by this notice consists of original copyrightab
 
 That section currently contains 136 numbered entries describing the project's architecture, enhancements, corrections, hardening, tooling, and operational work.
 
+<!-- START ALPHA CHANGE 3919 -- identify original implementation and packaging material -->
+
 Those descriptions, their source-file references, and the corresponding ALPHA CHANGE annotations help identify the INNBC-specific implementation.
 
+The original INNBC material also includes original contributions to the installation, configuration, node-management, and package-building workflows in:
+
+- `packaging/nodeclient/`;
+- `packaging/innbc-peerdirectory-service/`;
+- `packaging/innbc-snapshot-builder/`;
+- `scripts/build-nodeclient.sh`;
+- `scripts/build-localtestclient.sh`;
+- `command/node/`;
+- the associated original documentation.
+
+These references identify locations containing original contributions. They do not claim ownership of inherited or separately licensed material within those locations.
+
 This notice applies only to original copyrightable material actually present in the relevant distribution and owned by the stated copyright holder.
+
+<!-- FINISH ALPHA CHANGE 3919 -- identify original implementation and packaging material -->
 
 In particular:
 
@@ -41,19 +61,110 @@ In particular:
 
 This notice concerns copyrightable expression. It does not claim exclusive rights over general technical ideas, public standards, protocol concepts, upstream techniques, public blockchain facts, or independently authored implementations.
 
-## 3. Separate Written Permission
+<!-- START ALPHA CHANGE 3920 -- permit official network use and attributed noncommercial derivatives -->
 
-Except for rights arising under another applicable license, applicable law, or the hosting platform's terms, this notice grants no permission to reproduce, modify, compile, execute, deploy, distribute, sublicense, or incorporate the proprietary INNBC material into another product or service.
+## 3. Permitted Uses and Restricted Commercialization
 
-Such permission requires a separate written license agreement from Jonathan Fior or an authorized representative of the relevant copyright holder.
+The following permissions apply to the original INNBC material identified in section 2, to the extent that the stated copyright holder owns and can license that material.
 
-This requirement applies to both commercial and noncommercial use of the proprietary material.
+These permissions are non-exclusive and royalty-free, subject to the conditions below. They do not replace the licenses of inherited or separately licensed components.
 
-Source visibility, technical documentation, build instructions, attribution, or possession of a copy do not by themselves grant additional permission under this notice.
+### 3.1 Official INNBC Chain Network Operation
 
-A written agreement may grant permissions for specified uses, including evaluation, development, validator operation, deployment, modification, redistribution, or commercial integration.
+Individuals and organizations may download, copy, inspect, compile, install, execute, and make modifications necessary to operate the software for participation in the official INNBC Chain network without paying a software licensing fee or obtaining a separate written agreement.
+
+This permission includes:
+
+- running nodes and associated peer-directory or snapshot services;
+- seeking validator admission and operating as an eligible validator;
+- receiving protocol rewards and transaction fees;
+- operating RPC, hosting, maintenance, support, wallet, exchange, explorer, and application services for the official network;
+- using the official network as part of commercial business activities;
+- making operational, compatibility, security, and maintenance modifications for those permitted activities;
+- sharing copies without a software licensing charge to enable those permitted activities, while preserving applicable licensing and copyright notices.
+
+Charging for permitted hosting, support, maintenance, or network services does not by itself require a separate software license agreement. This permission does not authorize selling or licensing the protected implementation as a separate software product.
+
+Applications that merely interact with INNBC Chain through its protocol or RPC interfaces are not treated as derivatives of this client solely because of that interaction.
+
+The official network means the public INNBC Chain network itself, rather than an independent blockchain network created using this implementation.
+
+Permission to use the software does not grant automatic validator or peer admission. Registration, whitelisting, staking, consensus rules, and other applicable governance and technical requirements remain in effect.
+
+No software licensing fee does not mean that transactions, infrastructure, or network participation have no costs. Protocol fees, required stake, and operating expenses remain applicable.
+
+### 3.2 Noncommercial Modifications and Derivatives
+
+Permission is granted to copy, modify, compile, execute, and redistribute the original INNBC material for noncommercial research, education, experimentation, security review, and other noncommercial derivative work, subject to section 3.3.
+
+For this permission, noncommercial means that the relevant activity is not primarily intended for or directed toward commercial advantage or monetary compensation.
+
+The activity's actual purpose determines its classification. A free download does not automatically make a commercial product noncommercial, and an organization's nonprofit status does not automatically make every activity noncommercial.
+
+Examples may include:
+
+- an experimental version used to study consensus behavior;
+- a research prototype comparing storage or synchronization approaches;
+- a volunteer security-research fork demonstrating a correction;
+- a community adaptation for another operating system;
+- a noncommercial experimental test network.
+
+These examples qualify only where the actual activity meets the stated conditions.
+
+The official-network permissions in section 3.1 remain applicable even when the operator is a business or receives compensation for a permitted service.
+
+Later commercialization outside section 3.1 requires the separate agreement described in section 3.4.
+
+### 3.3 Attribution and Identification of Modifications
+
+Recipients exercising the permissions above must preserve applicable original copyright, licensing, and attribution notices.
+
+Distributed or publicly offered noncommercial derivatives must clearly identify their origin and preserve the following information in their README and accompanying licensing or credits documentation:
+
+- original developer: Jonathan Fior;
+- project attribution: Innovative Bioresearch;
+- website: https://www.innovativebioresearch.com/;
+- developer profile: https://github.com/InnovativeBioresearch;
+- original source: https://github.com/InnovativeBioresearch/INNBC-chain.
+
+A suitable attribution is:
+
+> Based on INNBC Chain, originally developed by [Jonathan Fior](https://github.com/InnovativeBioresearch) at [Innovative Bioresearch](https://www.innovativebioresearch.com/).
+>
+> Original source: https://github.com/InnovativeBioresearch/INNBC-chain
+>
+> Modifications by: [name]. No endorsement by the original developer is implied.
+
+Identify the relevant modifications and their dates in a reasonable manner.
+
+Where a derivative has an associated public website or graphical interface, provide the attribution in an accessible About, Credits, or legal-notices area. A command-line-only project may provide it through its documentation or license/credits output.
+
+No advertising banner, original logo, or credit on every page is required. Private experimentation does not require a public announcement, but applicable notices must remain with retained copies.
+
+Distributed copies containing the original INNBC material must retain this licensing notice. Recipients must not represent that they can grant broader permissions for the original material than they actually hold.
+
+Attribution does not imply endorsement and does not substitute for the written agreement required for restricted commercialization.
+
+Merely using the official network or interacting with its RPC interfaces does not require an application's own interface to display client-development credits.
+
+### 3.4 Commercialization Requiring a Written Agreement
+
+Except where section 3.1 or another applicable permission authorizes the activity, a separate written license agreement is required to:
+
+- create or commercialize a separate software product or commercial derivative incorporating the protected original INNBC material;
+- create or operate an independent for-profit blockchain fork using that material;
+- sell, license for payment, or resell software containing the protected original INNBC material;
+- incorporate that material into another commercial product or service outside the permitted official-network activities.
+
+A GitHub repository fork used for inspection or permitted development is not, merely by being a repository fork, an independent commercial blockchain network.
+
+These restrictions apply only to the original material identified in section 2. They do not restrict rights available for inherited or separately licensed material.
+
+The agreement must come from Jonathan Fior or an authorized representative of the relevant copyright holder.
 
 Requests should identify the repository revision, the material concerned, and the intended use.
+
+<!-- FINISH ALPHA CHANGE 3920 -- permit official network use and attributed noncommercial derivatives -->
 
 ## 4. Upstream and Separately Licensed Material
 
@@ -97,11 +208,17 @@ A separate written agreement governs the material and permissions it expressly c
 
 This notice does not determine the legal effect or licensing scope of an earlier publication.
 
+<!-- START ALPHA CHANGE 3921 -- distinguish accurate attribution from branding endorsement -->
+
 ## 8. Branding
 
-No trademark permission or permission to imply endorsement is granted by this document.
+Accurate attribution and reasonable descriptive references to INNBC Chain, Jonathan Fior, and Innovative Bioresearch, including the attribution required by section 3.3, are permitted under this notice.
+
+This permission does not authorize misleading claims of endorsement or official status, or grant permission to reuse reserved logo artwork.
 
 INNBC, INNBC Chain, Innovative Bioresearch, and associated logos remain subject to the applicable rights of their owners. This statement does not assert that any mark is registered.
+
+<!-- FINISH ALPHA CHANGE 3921 -- distinguish accurate attribution from branding endorsement -->
 
 ## 9. Warranty
 

@@ -10812,9 +10812,47 @@ Current deployment and operation must follow the INNBC-specific documentation in
 
 ## License
 
-<!-- START ALPHA CHANGE 3917 -- document mixed licensing and original INNBC rights -->
+<!-- START ALPHA CHANGE 3923 -- explain network permissions attribution and commercial restrictions -->
 
-This repository contains material governed by different licensing terms.
+**Operating software for the official INNBC Chain network requires no software licensing fee or separate written agreement.** This includes permitted commercial network services. The detailed permissions and conditions are provided in [LICENSING.md](LICENSING.md).
+
+### Official Network Participation
+
+Individuals and organizations may build and run the software for participation in the official INNBC Chain network, including node operation, eligible validator operation, and RPC, hosting, maintenance, support, wallet, exchange, explorer, and application services.
+
+Businesses may use the official network. Receiving protocol rewards or transaction fees, trading INNBC, and charging for permitted network services do not by themselves require a separate software license agreement.
+
+Software permission does not confer automatic validator or peer admission. Registration, whitelisting, staking, consensus rules, and other governance and technical requirements remain applicable.
+
+"No software licensing fee" does not mean that transactions or infrastructure have no costs. Protocol fees, required stake, and operating expenses remain applicable.
+
+### Noncommercial Modifications and Derivatives
+
+Noncommercial modifications and derivative works are permitted subject to the attribution, notice-preservation, and other conditions in [LICENSING.md](LICENSING.md).
+
+Examples may include research prototypes, educational experiments, volunteer security-research forks, community platform adaptations, and noncommercial experimental test networks.
+
+"Noncommercial" concerns the activity's purpose. Providing a free download does not automatically make a commercial product noncommercial.
+
+Distributed or publicly offered noncommercial derivatives must identify their origin. A suitable attribution is:
+
+> Based on INNBC Chain, originally developed by [Jonathan Fior](https://github.com/InnovativeBioresearch) at [Innovative Bioresearch](https://www.innovativebioresearch.com/).
+>
+> Original source: https://github.com/InnovativeBioresearch/INNBC-chain
+>
+> Modifications by: [name]. No endorsement by the original developer is implied.
+
+Preserve the applicable original notices and identify modifications and their dates. See section 3.3 of [LICENSING.md](LICENSING.md) for attribution placement and distribution conditions.
+
+### Restricted Commercialization
+
+Except for permitted official-network activities or another applicable permission, commercial software derivatives incorporating the protected original INNBC material, independent for-profit chain forks using that material, and software sales or resale require a separate written license agreement.
+
+Attribution does not substitute for that agreement.
+
+These restrictions concern reuse of the protected implementation. Applications are not treated as derivatives of this client merely because they interact with INNBC Chain through its protocol or RPC interfaces.
+
+### Upstream Material and Licensing Scope
 
 Retained Apache-licensed upstream material remains under Apache-2.0. The unchanged Apache license text is reproduced in [LICENSE](LICENSE).
 
@@ -10822,14 +10860,14 @@ Upstream attribution includes:
 
 Copyright 2022 Polygon Technology.
 
-Original copyrightable INNBC Chain additions and modifications are governed by [LICENSING.md](LICENSING.md) and require a separate written license agreement, except where another applicable permission already exists.
+Original copyrightable INNBC Chain additions and modifications are governed by [LICENSING.md](LICENSING.md).
 
-The [Major Enhancements Over Polygon Edge](#major-enhancements-over-polygon-edge) section currently documents 136 numbered entries. The licensing notice explains how those descriptions and the corresponding source annotations relate to the original implementation material.
+The [Major Enhancements Over Polygon Edge](#major-enhancements-over-polygon-edge) section currently documents 136 numbered entries. The licensing notice explains how those descriptions, source references, packaging workflows, and annotations identify original implementation material.
 
 Third-party dependencies and material expressly licensed separately retain their respective licenses. These notices do not revoke rights already validly granted under an applicable license or agreement.
 
-The customized distribution is source available with mixed licensing and is not represented as wholly Apache-licensed or wholly open source.
+The customized distribution is source available with mixed licensing and commercial restrictions. It is not represented as wholly Apache-licensed or wholly open source.
 
-<!-- FINISH ALPHA CHANGE 3917 -- document mixed licensing and original INNBC rights -->
+<!-- FINISH ALPHA CHANGE 3923 -- explain network permissions attribution and commercial restrictions -->
 
 <!-- FINISH ALPHA CHANGE 1471 -- document INNBC architecture and enhancements over Polygon Edge -->

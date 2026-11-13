@@ -16,8 +16,21 @@ under this licensing notice, grant an Apache license to those proprietary
 portions.
 
 The README.md section "Major Enhancements Over Polygon Edge" documents
-the INNBC-specific work. LICENSING.md explains the scope, exceptions,
-and requirement for a separate written license agreement.
+the INNBC-specific work.
+
+LICENSING.md grants permission, without software licensing fees or a
+separate written agreement, for official INNBC Chain network operation,
+including permitted commercial network services.
+
+It also permits noncommercial modifications and derivatives subject to
+attribution and the other stated conditions.
+
+Specified commercial software derivatives, independent for-profit chain
+forks, and software resale require a separate written license agreement,
+except where another applicable permission authorizes the activity.
+
+Protocol fees, staking, validator admission, and infrastructure costs
+remain separate from software licensing.
 
 Other third-party components and material expressly licensed separately
 retain their applicable licenses and notices.
