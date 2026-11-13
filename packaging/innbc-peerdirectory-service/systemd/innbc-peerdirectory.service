@@ -1,0 +1,63 @@
+# START ALPHA CHANGE 999 -- add standalone peer directory systemd service --
+[Unit]
+Description=INNBC validator peer directory
+# START ALPHA CHANGE 1477 -- prevent peer directory from starting validator node1 --
+After=network-online.target
+Wants=network-online.target
+# FINISH ALPHA CHANGE 1477 -- prevent peer directory from starting validator node1 --
+
+[Service]
+Type=simple
+# START ALPHA CHANGE 1927 -- run the peer directory inside the unprivileged INNBC boundary --
+User=innbc
+Group=innbc
+UMask=0077
+NoNewPrivileges=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+LockPersonality=true
+SystemCallArchitectures=native
+ReadWritePaths=/var/lib/innbc/peer-directory
+# FINISH ALPHA CHANGE 1927 -- run the peer directory inside the unprivileged INNBC boundary --
+Environment=INNBC_PEER_DIRECTORY_LISTEN=127.0.0.1:8080
+Environment=INNBC_PEER_DIRECTORY_JSONRPC=http://127.0.0.1:8545
+# START ALPHA CHANGE 2287 -- remove misplaced bare assignments from the systemd unit --
+# Native admission defaults are supplied by the Environment= directives below.
+# Operator overrides belong in /etc/innbc/peerdirectory.env.
+# FINISH ALPHA CHANGE 2287 -- remove misplaced bare assignments from the systemd unit --
+Environment=INNBC_VALIDATOR_REGISTRY=0x0000000000000000000000000000000000000107
+Environment=INNBC_CHAIN=/etc/innbc/genesis.json
+# START ALPHA CHANGE 1920 -- wire the persistent peer directory cache --
+Environment=INNBC_PEER_DIRECTORY_CACHE_FILE=/var/lib/innbc/peer-directory/peers.json
+# FINISH ALPHA CHANGE 1920 -- wire the persistent peer directory cache --
+# START ALPHA CHANGE 2230 -- supply limit defaults for preserved existing env files --
+Environment=INNBC_PEER_DIRECTORY_REQUEST_RATE=20
+Environment=INNBC_PEER_DIRECTORY_REQUEST_BURST=64
+Environment=INNBC_PEER_DIRECTORY_PEER_INTERVAL=5s
+Environment=INNBC_PEER_DIRECTORY_PEER_BURST=8
+Environment=INNBC_PEER_DIRECTORY_MAX_CONCURRENT=32
+Environment=INNBC_PEER_DIRECTORY_MAX_TRACKED_PEERS=4096
+# FINISH ALPHA CHANGE 2230 -- supply limit defaults for preserved existing env files --
+# START ALPHA CHANGE 1934 -- require explicit peer-directory runtime configuration --
+EnvironmentFile=/etc/innbc/peerdirectory.env
+# FINISH ALPHA CHANGE 1934 -- require explicit peer-directory runtime configuration --
+# START ALPHA CHANGE 2230 -- pass native admission settings to the directory --
+ExecStart=/usr/local/bin/innbc-chain peerdirectory --listen ${INNBC_PEER_DIRECTORY_LISTEN} --jsonrpc ${INNBC_PEER_DIRECTORY_JSONRPC} --validator-registry ${INNBC_VALIDATOR_REGISTRY} --chain ${INNBC_CHAIN} --cache-file ${INNBC_PEER_DIRECTORY_CACHE_FILE} --request-rate ${INNBC_PEER_DIRECTORY_REQUEST_RATE} --request-burst ${INNBC_PEER_DIRECTORY_REQUEST_BURST} --peer-request-interval ${INNBC_PEER_DIRECTORY_PEER_INTERVAL} --peer-request-burst ${INNBC_PEER_DIRECTORY_PEER_BURST} --max-concurrent-exchanges ${INNBC_PEER_DIRECTORY_MAX_CONCURRENT} --max-tracked-peers ${INNBC_PEER_DIRECTORY_MAX_TRACKED_PEERS}
+# FINISH ALPHA CHANGE 2230 -- pass native admission settings to the directory --
+Restart=always
+RestartSec=5
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+# FINISH ALPHA CHANGE 999 -- add standalone peer directory systemd service --

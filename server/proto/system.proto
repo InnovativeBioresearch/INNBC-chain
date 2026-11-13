@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package v1;
+
+option go_package = "/server/proto";
+
+import "google/protobuf/empty.proto";
+import "validate/validate.proto";
+
+service System {
+  // GetInfo returns info about the client
+  rpc GetStatus(google.protobuf.Empty) returns (ServerStatus);
+
+  // PeersAdd adds a new peer
+  rpc PeersAdd(PeersAddRequest) returns (PeersAddResponse);
+
+  // PeersList returns the list of peers
+  rpc PeersList(google.protobuf.Empty) returns (PeersListResponse);
+
+  // PeersInfo returns the info of a peer
+  rpc PeersStatus(PeersStatusRequest) returns (Peer);
+
+  // Subscribe subscribes to blockchain events
+  rpc Subscribe(google.protobuf.Empty) returns (stream BlockchainEvent);
+
+  /* START ALPHA CHANGE 3269 -- retire legacy RLP archive operator RPCs -- */
+  /* FINISH ALPHA CHANGE 3269 -- retire legacy RLP archive operator RPCs -- */
+
+  /* START ALPHA CHANGE 1219 -- expose manual peer directory refresh through local system grpc -- */
+  // RefreshPeerDirectory runs one authenticated peer-directory exchange from the running node
+  rpc RefreshPeerDirectory(google.protobuf.Empty) returns (RefreshPeerDirectoryResponse);
+  /* FINISH ALPHA CHANGE 1219 -- expose manual peer directory refresh through local system grpc -- */
+}
+
+message BlockchainEvent {
+  repeated Header added = 1;
+  repeated Header removed = 2;
+
+  message Header {
+    int64 number = 1;
+    string hash = 2;
+  }
+}
+
+message ServerStatus {
+  int64 network = 1;
+
+  string genesis = 2;
+
+  Block current = 3;
+
+  string p2pAddr = 4;
+
+  message Block {
+    int64 number = 1;
+    string hash = 2;
+  }
+}
+
+message Peer {
+  string id = 1;
+  repeated string protocols = 2;
+  repeated string addrs = 3;
+}
+
+message PeersAddRequest {
+  string id = 1[(validate.rules).string.pattern = "^\\/[A-Za-z0-9._~-]+(\\/[A-Za-z0-9._~-]+)*$"];
+}
+
+message PeersAddResponse {
+  string message = 1;
+}
+
+message PeersStatusRequest {
+  string id = 1[(validate.rules).string.pattern = "^[A-Za-z0-9]{1,}$"];
+}
+
+message PeersListResponse {
+  repeated Peer peers = 1;
+}
+
+/* START ALPHA CHANGE 3269 -- remove messages exclusive to legacy RLP archive RPCs -- */
+/* FINISH ALPHA CHANGE 3269 -- remove messages exclusive to legacy RLP archive RPCs -- */
+
+/* START ALPHA CHANGE 1220 -- return peer directory refresh peers to operator cli -- */
+message RefreshPeerDirectoryResponse {
+  repeated string peers = 1;
+}
+/* FINISH ALPHA CHANGE 1220 -- return peer directory refresh peers to operator cli -- */

@@ -1,0 +1,127 @@
+# START ALPHA CHANGE 747 -- add templated INNBC node systemd service --
+[Unit]
+Description=INNBC validator node %i
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# START ALPHA CHANGE 1927 -- run validator nodes inside the unprivileged INNBC boundary --
+User=innbc
+Group=innbc
+UMask=0077
+NoNewPrivileges=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+LockPersonality=true
+SystemCallArchitectures=native
+ReadWritePaths=/var/lib/innbc /var/log/innbc
+# FINISH ALPHA CHANGE 1927 -- run validator nodes inside the unprivileged INNBC boundary --
+Environment=INNBC_CHAIN=/etc/innbc/genesis.json
+Environment=INNBC_DATA_DIR=/var/lib/innbc/%i
+Environment=INNBC_JSONRPC_ADDR=127.0.0.1:8545
+Environment=INNBC_GRPC_ADDR=127.0.0.1:9632
+Environment=INNBC_LIBP2P_ADDR=127.0.0.1:30301
+# START ALPHA CHANGE 1210 -- pass optional advertised peer addresses through systemd services --
+Environment=INNBC_NAT_ADDR=
+Environment=INNBC_DNS_ADDR=
+# FINISH ALPHA CHANGE 1210 -- pass optional advertised peer addresses through systemd services --
+# START ALPHA CHANGE 1162 -- pass JSON-RPC public safety limits through systemd services --
+# START ALPHA CHANGE 2498 -- inherit the code default when the node env omits the log-range override --
+Environment=INNBC_JSONRPC_BLOCK_RANGE_LIMIT=0
+# FINISH ALPHA CHANGE 2498 -- inherit the code default when the node env omits the log-range override --
+# START ALPHA CHANGE 2463 -- use code defaults when node environments omit fee-history overrides --
+Environment=INNBC_JSONRPC_FEE_HISTORY_BLOCK_LIMIT=0
+Environment=INNBC_JSONRPC_FEE_HISTORY_PERCENTILE_LIMIT=0
+Environment=INNBC_JSONRPC_FEE_HISTORY_RESULT_LIMIT=0
+# FINISH ALPHA CHANGE 2463 -- use code defaults when node environments omit fee-history overrides --
+# START ALPHA CHANGE 2274 -- provide RPC admission defaults for existing node environments --
+Environment=INNBC_JSONRPC_REQUEST_RATE=100
+Environment=INNBC_JSONRPC_REQUEST_BURST=200
+Environment=INNBC_JSONRPC_CALL_RATE=200
+Environment=INNBC_JSONRPC_CALL_BURST=400
+Environment=INNBC_JSONRPC_MAX_CONCURRENT=32
+Environment=INNBC_JSONRPC_MAX_EXPENSIVE=4
+Environment=INNBC_JSONRPC_MAX_BODY_BYTES=1048576
+Environment=INNBC_JSONRPC_MAX_WEBSOCKETS=64
+Environment=INNBC_JSONRPC_MAX_FILTERS=1024
+# FINISH ALPHA CHANGE 2274 -- provide RPC admission defaults for existing node environments --
+# FINISH ALPHA CHANGE 1162 -- pass JSON-RPC public safety limits through systemd services --
+Environment=INNBC_PEER_DIRECTORY_ENABLED=true
+Environment=INNBC_PEER_DIRECTORY_URL=http://127.0.0.1:8080/api/v1/peers/exchange
+# START ALPHA CHANGE 850 -- pass history mode settings through systemd node services --
+Environment=INNBC_HISTORY_MODE=full
+# START ALPHA CHANGE 1771 -- keep segmented geometry inactive unless overridden by a recent node --
+Environment=INNBC_HISTORY_RETENTION_BLOCKS=0
+Environment=INNBC_HISTORY_SEGMENT_BLOCKS=0
+# FINISH ALPHA CHANGE 1771 -- keep segmented geometry inactive unless overridden by a recent node --
+# START ALPHA CHANGE 1734 -- pass independent snapshot consumer settings through systemd --
+Environment=INNBC_SNAPSHOT_SOURCE_DIR=/var/lib/innbc/snapshots/checkpoint
+Environment=INNBC_SNAPSHOT_BOOTSTRAP_REQUIRED=false
+# FINISH ALPHA CHANGE 1734 -- pass independent snapshot consumer settings through systemd --
+# START ALPHA CHANGE 3062 -- default full-history services to one TiB per MDBX database --
+Environment=INNBC_MDBX_MAP_SIZE_GB=1024
+# START ALPHA CHANGE 3477 -- default database creation pages to four KiB --
+Environment=INNBC_MDBX_PAGE_SIZE_BYTES=4096
+# FINISH ALPHA CHANGE 3477 -- default database creation pages to four KiB --
+# FINISH ALPHA CHANGE 3062 -- default full-history services to one TiB per MDBX database --
+# FINISH ALPHA CHANGE 850 -- pass history mode settings through systemd node services --
+# START ALPHA CHANGE 1932 -- require explicit per-node runtime configuration --
+EnvironmentFile=/etc/innbc/%i.env
+# FINISH ALPHA CHANGE 1932 -- require explicit per-node runtime configuration --
+# START ALPHA CHANGE 2274 -- pass configurable RPC admission limits through systemd --
+ExecStart=/usr/local/bin/innbc-chain server \
+  --chain ${INNBC_CHAIN} \
+  --data-dir ${INNBC_DATA_DIR} \
+  --grpc-address ${INNBC_GRPC_ADDR} \
+  --jsonrpc ${INNBC_JSONRPC_ADDR} \
+  --libp2p ${INNBC_LIBP2P_ADDR} \
+  --nat=${INNBC_NAT_ADDR} \
+  --dns=${INNBC_DNS_ADDR} \
+  --json-rpc-block-range-limit ${INNBC_JSONRPC_BLOCK_RANGE_LIMIT} \
+  --json-rpc-fee-history-block-limit ${INNBC_JSONRPC_FEE_HISTORY_BLOCK_LIMIT} \
+  --json-rpc-fee-history-percentile-limit ${INNBC_JSONRPC_FEE_HISTORY_PERCENTILE_LIMIT} \
+  --json-rpc-fee-history-result-limit ${INNBC_JSONRPC_FEE_HISTORY_RESULT_LIMIT} \
+  --json-rpc-request-rate ${INNBC_JSONRPC_REQUEST_RATE} \
+  --json-rpc-request-burst ${INNBC_JSONRPC_REQUEST_BURST} \
+  --json-rpc-call-rate ${INNBC_JSONRPC_CALL_RATE} \
+  --json-rpc-call-burst ${INNBC_JSONRPC_CALL_BURST} \
+  --json-rpc-max-concurrent ${INNBC_JSONRPC_MAX_CONCURRENT} \
+  --json-rpc-max-expensive ${INNBC_JSONRPC_MAX_EXPENSIVE} \
+  --json-rpc-max-body-bytes ${INNBC_JSONRPC_MAX_BODY_BYTES} \
+  --json-rpc-max-websockets ${INNBC_JSONRPC_MAX_WEBSOCKETS} \
+  --json-rpc-max-filters ${INNBC_JSONRPC_MAX_FILTERS} \
+  --peer-directory-enabled=${INNBC_PEER_DIRECTORY_ENABLED} \
+  --peer-directory-url ${INNBC_PEER_DIRECTORY_URL} \
+  --history-mode ${INNBC_HISTORY_MODE} \
+  --history-retention-blocks ${INNBC_HISTORY_RETENTION_BLOCKS} \
+  --history-segment-blocks ${INNBC_HISTORY_SEGMENT_BLOCKS} \
+  --snapshot-source-dir=${INNBC_SNAPSHOT_SOURCE_DIR} \
+  --snapshot-bootstrap-required=${INNBC_SNAPSHOT_BOOTSTRAP_REQUIRED} \
+  --mdbx-page-size-bytes=${INNBC_MDBX_PAGE_SIZE_BYTES} \
+  --mdbx-map-size-gb ${INNBC_MDBX_MAP_SIZE_GB}
+# START ALPHA CHANGE 3477 -- pass creation pages with empty-value default handling --
+# FINISH ALPHA CHANGE 3477 -- pass creation pages with empty-value default handling --
+# FINISH ALPHA CHANGE 2274 -- pass configurable RPC admission limits through systemd --
+Restart=always
+RestartSec=5
+# START ALPHA CHANGE 3161 -- allow orderly node shutdown to finish without a supervisor stop timeout --
+# Component shutdown retains its own listener timeouts.
+# If cleanup stalls permanently, an operator must explicitly force termination.
+TimeoutStopSec=infinity
+# FINISH ALPHA CHANGE 3161 -- allow orderly node shutdown to finish without a supervisor stop timeout --
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+# FINISH ALPHA CHANGE 747 -- add templated INNBC node systemd service --

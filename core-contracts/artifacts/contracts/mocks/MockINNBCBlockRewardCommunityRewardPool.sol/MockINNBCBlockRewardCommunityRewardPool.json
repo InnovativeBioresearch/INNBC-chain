@@ -1,0 +1,37 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockINNBCBlockRewardCommunityRewardPool",
+  "sourceName": "contracts/mocks/MockINNBCBlockRewardCommunityRewardPool.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "communityRewardRateBps",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "setCommunityRewardRateBps",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5060b18061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c8063967467d21460375780639d4b5670146049575b600080fd5b604760423660046063565b600055565b005b605160005481565b60405190815260200160405180910390f35b600060208284031215607457600080fd5b503591905056fea264697066735822122068a223946f5ea964c0aea74ef88dd7fbfed360998298cdf9d0a882b52969135664736f6c63430008130033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c8063967467d21460375780639d4b5670146049575b600080fd5b604760423660046063565b600055565b005b605160005481565b60405190815260200160405180910390f35b600060208284031215607457600080fd5b503591905056fea264697066735822122068a223946f5ea964c0aea74ef88dd7fbfed360998298cdf9d0a882b52969135664736f6c63430008130033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

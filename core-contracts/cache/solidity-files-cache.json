@@ -1,0 +1,1679 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/child/INNBCNativeToken.sol": {
+      "lastModificationDate": 1784429637528,
+      "contentHash": "628e98d00495a3570df6ddd4e2c18e37",
+      "sourceName": "contracts/child/INNBCNativeToken.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "@openzeppelin/contracts/utils/Context.sol",
+        "@openzeppelin/contracts/proxy/utils/Initializable.sol",
+        "./System.sol"
+      ],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "INNBCNativeToken"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/child/System.sol": {
+      "lastModificationDate": 1791501540405,
+      "contentHash": "4249674982a8c02d99ae362f8edda5f2",
+      "sourceName": "contracts/child/System.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/Errors.sol"
+      ],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "System"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1783652020708,
+      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/proxy/utils/Initializable.sol": {
+      "lastModificationDate": 1783652046757,
+      "contentHash": "5efeb93e6b1c83c754da2846c2da51a7",
+      "sourceName": "@openzeppelin/contracts/proxy/utils/Initializable.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.2"
+      ],
+      "artifacts": [
+        "Initializable"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1783652042753,
+      "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/interfaces/Errors.sol": {
+      "lastModificationDate": 1793067362987,
+      "contentHash": "95bfc674867d16deee4bce47b2a35faf",
+      "sourceName": "contracts/interfaces/Errors.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": []
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1783652019218,
+      "contentHash": "211ffd288c1588ba8c10eae668ca3c66",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.1"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1783652042335,
+      "contentHash": "df36f7051335cd1e748b1b6463b7fdd3",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+      "lastModificationDate": 1783652049587,
+      "contentHash": "1b5d667d3740d866eca0352758e59827",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol",
+        "../extensions/IERC20Permit.sol",
+        "../../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol": {
+      "lastModificationDate": 1783652042993,
+      "contentHash": "aa849939a4ae83a4dcb2dca9b3e9e707",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Permit"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol": {
+      "lastModificationDate": 1783652028222,
+      "contentHash": "a127706394bead18392601a20d44867a",
+      "sourceName": "@openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../beacon/IBeacon.sol",
+        "../../interfaces/IERC1967.sol",
+        "../../interfaces/draft-IERC1822.sol",
+        "../../utils/Address.sol",
+        "../../utils/StorageSlot.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.2"
+      ],
+      "artifacts": [
+        "ERC1967Upgrade"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/interfaces/IERC1967.sol": {
+      "lastModificationDate": 1783652042023,
+      "contentHash": "d0d060231a45da7a1eecbb5cd286fa40",
+      "sourceName": "@openzeppelin/contracts/interfaces/IERC1967.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC1967"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/interfaces/draft-IERC1822.sol": {
+      "lastModificationDate": 1783652023061,
+      "contentHash": "2858d98e74e67987ec81b39605230b74",
+      "sourceName": "@openzeppelin/contracts/interfaces/draft-IERC1822.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC1822Proxiable"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/utils/StorageSlot.sol": {
+      "lastModificationDate": 1783652050319,
+      "contentHash": "682f7dd1f2e1147c8390e7575deceb2d",
+      "sourceName": "@openzeppelin/contracts/utils/StorageSlot.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "StorageSlot"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/proxy/beacon/IBeacon.sol": {
+      "lastModificationDate": 1783652039058,
+      "contentHash": "b6bd23bf19e90b771337037706470933",
+      "sourceName": "@openzeppelin/contracts/proxy/beacon/IBeacon.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IBeacon"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol": {
+      "lastModificationDate": 1783652028015,
+      "contentHash": "3fc3c7c0a2956f36e766691bb9473b06",
+      "sourceName": "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Proxy.sol",
+        "./ERC1967Upgrade.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC1967Proxy"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/proxy/Proxy.sol": {
+      "lastModificationDate": 1783652048721,
+      "contentHash": "40b3d81a836d50ff47e03893dcaaf204",
+      "sourceName": "@openzeppelin/contracts/proxy/Proxy.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Proxy"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol": {
+      "lastModificationDate": 1783652051026,
+      "contentHash": "1286aa8d056c7120d1a2da252e310d2f",
+      "sourceName": "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC1967/ERC1967Proxy.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ITransparentUpgradeableProxy",
+        "TransparentUpgradeableProxy"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/lib/GenesisProxy.sol": {
+      "lastModificationDate": 1783648136907,
+      "contentHash": "fe8d4d522360dc3ef4b3dfef7b986fb6",
+      "sourceName": "contracts/lib/GenesisProxy.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "GenesisProxy"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/innbc/INNBCTreasuryDAO.sol": {
+      "lastModificationDate": 1792884778910,
+      "contentHash": "6952c1d009f2250d5b5520db389a457c",
+      "sourceName": "contracts/innbc/INNBCTreasuryDAO.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "./IINNBCValidatorRegistry.sol",
+        "./INNBCGovernanceElectorate.sol"
+      ],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "IINNBCTreasuryNativeToken",
+        "INNBCTreasuryDAO"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/innbc/IINNBCValidatorRegistry.sol": {
+      "lastModificationDate": 1785203490718,
+      "contentHash": "86456dafe13e47c6e3e85124b3ae4366",
+      "sourceName": "contracts/innbc/IINNBCValidatorRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "IINNBCValidatorRegistry"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/innbc/INNBCGovernanceElectorate.sol": {
+      "lastModificationDate": 1792884143008,
+      "contentHash": "c126f90240bd1e7264a22dc9b760bb8f",
+      "sourceName": "contracts/innbc/INNBCGovernanceElectorate.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IINNBCValidatorRegistry.sol"
+      ],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "INNBCGovernanceElectorate"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/innbc/INNBCValidatorGovernance.sol": {
+      "lastModificationDate": 1792884763199,
+      "contentHash": "379d2d921945f70242a930476663cd66",
+      "sourceName": "contracts/innbc/INNBCValidatorGovernance.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IINNBCValidatorRegistry.sol",
+        "./INNBCGovernanceElectorate.sol"
+      ],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "INNBCValidatorGovernance"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/innbc/INNBCProxyAdminGovernance.sol": {
+      "lastModificationDate": 1793115537512,
+      "contentHash": "975741078af88b026e91c83aabe6c492",
+      "sourceName": "contracts/innbc/INNBCProxyAdminGovernance.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IINNBCValidatorRegistry.sol",
+        "./INNBCGovernanceElectorate.sol"
+      ],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "IINNBCProxyAdminExecutor",
+        "INNBCProxyAdminGovernance"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/innbc/INNBCCommunityRewardPool.sol": {
+      "lastModificationDate": 1793560336280,
+      "contentHash": "ec2f3e881e1f50b4e8c0026d54c3af03",
+      "sourceName": "contracts/innbc/INNBCCommunityRewardPool.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "./IINNBCValidatorRegistry.sol",
+        "./INNBCGovernanceElectorate.sol"
+      ],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "IINNBCCommunityRewardBlockRewardGovernance",
+        "INNBCCommunityRewardPool"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1783652047876,
+      "contentHash": "fe63409d8a06818b926cf89e0ea88b1b",
+      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/innbc/INNBCBlockRewardGovernance.sol": {
+      "lastModificationDate": 1793163797400,
+      "contentHash": "26fc407c7aaa71298b36510896b72f72",
+      "sourceName": "contracts/innbc/INNBCBlockRewardGovernance.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "./IINNBCValidatorRegistry.sol",
+        "./INNBCGovernanceElectorate.sol"
+      ],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "IINNBCBlockRewardCommunityRewardPool",
+        "IINNBCBlockRewardNativeToken",
+        "INNBCBlockRewardGovernance"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1783652028429,
+      "contentHash": "3ae5166c6827a9cf1a7a462d1632b464",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/mocks/INNBCAuditMocks.sol": {
+      "lastModificationDate": 1790478896823,
+      "contentHash": "d9de820c3da4c668b1b0589d4a831e5c",
+      "sourceName": "contracts/mocks/INNBCAuditMocks.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "IINNBCAuditPool",
+        "INNBCAuditBLS",
+        "INNBCAuditReceiver",
+        "INNBCAuditToken",
+        "INNBCAuditUpgradeV1",
+        "INNBCAuditUpgradeV2"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/child/validator/ValidatorSet.sol": {
+      "lastModificationDate": 1792680864872,
+      "contentHash": "96b8bdb7d72c2f8214513e63d41095a8",
+      "sourceName": "contracts/child/validator/ValidatorSet.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol",
+        "../../interfaces/child/validator/IValidatorSet.sol",
+        "../System.sol"
+      ],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "ValidatorSet"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/interfaces/child/validator/IValidatorSet.sol": {
+      "lastModificationDate": 1792630690861,
+      "contentHash": "6f0ec6993598e53c3fe30bba7e9501cb",
+      "sourceName": "contracts/interfaces/child/validator/IValidatorSet.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "IValidatorSet"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol": {
+      "lastModificationDate": 1783652045757,
+      "contentHash": "b0970a564d121abf9adfff8d1a01eb16",
+      "sourceName": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/AddressUpgradeable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.2"
+      ],
+      "artifacts": [
+        "Initializable"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/node_modules/@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol": {
+      "lastModificationDate": 1783652017551,
+      "contentHash": "c30c805386fda8a42ff515da963d3a95",
+      "sourceName": "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.1"
+      ],
+      "artifacts": [
+        "AddressUpgradeable"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/common/BLS.sol": {
+      "lastModificationDate": 1783648136740,
+      "contentHash": "d20c9afcd866cf449b092531d28c14aa",
+      "sourceName": "contracts/common/BLS.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/common/IBLS.sol",
+        "../lib/ModExp.sol"
+      ],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "BLS"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/interfaces/common/IBLS.sol": {
+      "lastModificationDate": 1783648136817,
+      "contentHash": "2c1ae2ac955f4a3c10e56219ffb0bacc",
+      "sourceName": "contracts/interfaces/common/IBLS.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "IBLS"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/lib/ModExp.sol": {
+      "lastModificationDate": 1783648136911,
+      "contentHash": "35b2fe4f26fff10432b2c46f7bb1393e",
+      "sourceName": "contracts/lib/ModExp.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "ModexpInverse",
+        "ModexpSqrt"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/innbc/INNBCValidatorRegistry.sol": {
+      "lastModificationDate": 1789488123494,
+      "contentHash": "03b7d62c7748e6189a719a98ecb48a58",
+      "sourceName": "contracts/innbc/INNBCValidatorRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/common/IBLS.sol"
+      ],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "IINNBCRegistryNativeToken",
+        "INNBCValidatorRegistry"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/innbc/INNBCFeeBurnVault.sol": {
+      "lastModificationDate": 1785266233429,
+      "contentHash": "dafc7df3c2d0430a838fa8ee31cd1245",
+      "sourceName": "contracts/innbc/INNBCFeeBurnVault.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "IINNBCFeeBurnNativeToken",
+        "INNBCFeeBurnVault"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/innbc/INNBCProxyAdminExecutor.sol": {
+      "lastModificationDate": 1793115537512,
+      "contentHash": "474957a4d995927e513ee445017e3ee1",
+      "sourceName": "contracts/innbc/INNBCProxyAdminExecutor.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "INNBCProxyAdminExecutor"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/mocks/MockINNBCBlockRewardCommunityRewardPool.sol": {
+      "lastModificationDate": 1786497737359,
+      "contentHash": "668337d4e28a4266aa7528b29243387a",
+      "sourceName": "contracts/mocks/MockINNBCBlockRewardCommunityRewardPool.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "MockINNBCBlockRewardCommunityRewardPool"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/mocks/MockINNBCBlockRewardNativeToken.sol": {
+      "lastModificationDate": 1786497737358,
+      "contentHash": "017dac8230bdeccf27849f78a3a2a520",
+      "sourceName": "contracts/mocks/MockINNBCBlockRewardNativeToken.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "MockINNBCBlockRewardNativeToken"
+      ]
+    },
+    "/mnt/c/Users/jonat/Desktop/coding/innbc chain/polygon-edge/innbc-chain/core-contracts/contracts/mocks/MockINNBCValidatorRegistry.sol": {
+      "lastModificationDate": 1786497825856,
+      "contentHash": "9aefefdedc7f4b93e01b3f4fc91069c4",
+      "sourceName": "contracts/mocks/MockINNBCValidatorRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 115
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "storageLayout",
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "MockINNBCValidatorRegistry"
+      ]
+    }
+  }
+}

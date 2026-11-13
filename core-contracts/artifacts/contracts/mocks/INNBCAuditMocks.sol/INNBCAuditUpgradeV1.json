@@ -1,0 +1,50 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "INNBCAuditUpgradeV1",
+  "sourceName": "contracts/mocks/INNBCAuditMocks.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "value_",
+          "type": "uint256"
+        }
+      ],
+      "name": "setValue",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "value",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5060c18061001f6000396000f3fe6080604052348015600f57600080fd5b5060043610603c5760003560e01c80633fa4f24514604157806354fd4d5014605b57806355241077146061575b600080fd5b604960005481565b60405190815260200160405180910390f35b60016049565b6071606c3660046073565b600055565b005b600060208284031215608457600080fd5b503591905056fea2646970667358221220c5842eb6afa3f0fc9545f855156b5ad73a05843a6f5a78af5efd7d1f922d9d1d64736f6c63430008130033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060043610603c5760003560e01c80633fa4f24514604157806354fd4d5014605b57806355241077146061575b600080fd5b604960005481565b60405190815260200160405180910390f35b60016049565b6071606c3660046073565b600055565b005b600060208284031215608457600080fd5b503591905056fea2646970667358221220c5842eb6afa3f0fc9545f855156b5ad73a05843a6f5a78af5efd7d1f922d9d1d64736f6c63430008130033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

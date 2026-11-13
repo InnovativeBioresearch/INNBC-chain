@@ -1,0 +1,399 @@
+package network
+
+import (
+	"context"
+	"errors"
+	"fmt"
+	"os"
+	"sync"
+	"testing"
+	"time"
+
+	"github.com/hashicorp/go-hclog"
+	"github.com/innovativebioresearch/innbc-chain/chain"
+	"github.com/innovativebioresearch/innbc-chain/helper/tests"
+	"github.com/innovativebioresearch/innbc-chain/secrets"
+	"github.com/innovativebioresearch/innbc-chain/secrets/local"
+	"github.com/libp2p/go-libp2p/core/crypto"
+	"github.com/libp2p/go-libp2p/core/peer"
+	"github.com/multiformats/go-multiaddr"
+	"github.com/stretchr/testify/assert"
+)
+
+const (
+	DefaultLeaveTimeout = 30 * time.Second
+)
+
+// JoinAndWait is a helper method for joining a destination server
+// and waiting for the connection to be successful (destination node is a peer of source)
+func JoinAndWait(
+	source,
+	destination *Server,
+	connectTimeout time.Duration,
+	joinTimeout time.Duration,
+) error {
+	if joinTimeout == 0 {
+		joinTimeout = DefaultJoinTimeout
+	}
+
+	if connectTimeout < joinTimeout {
+		// In case the connect timeout is smaller than the join timeout, align them
+		connectTimeout = joinTimeout
+	}
+
+	// Mark the destination address as ready for dialing
+	source.joinPeer(destination.AddrInfo())
+
+	connectCtx, cancelFn := context.WithTimeout(context.Background(), connectTimeout)
+	defer cancelFn()
+
+	// Wait for the peer to be connected
+	_, connectErr := WaitUntilPeerConnectsTo(connectCtx, source, destination.AddrInfo().ID)
+
+	return connectErr
+}
+
+// JoinAndWait is a helper method to make multiple servers connect to corresponding peer
+func JoinAndWaitMultiple(
+	timeout time.Duration,
+	servers ...*Server,
+) error {
+	if len(servers)%2 != 0 {
+		return errors.New("number of servers must be even")
+	}
+
+	numPair := len(servers) / 2
+
+	var (
+		wg    sync.WaitGroup
+		errCh = make(chan error, numPair)
+	)
+
+	for i := 0; i < len(servers)-1; i += 2 {
+		s1, s2 := servers[i], servers[i+1]
+
+		wg.Add(1)
+
+		go func() {
+			defer wg.Done()
+
+			errCh <- JoinAndWait(s1, s2, timeout, timeout)
+		}()
+	}
+
+	wg.Wait()
+
+	close(errCh)
+
+	for err := range errCh {
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+func DisconnectAndWait(
+	source *Server,
+	target peer.ID,
+	leaveTimeout time.Duration,
+) error {
+	if leaveTimeout == 0 {
+		leaveTimeout = DefaultLeaveTimeout
+	}
+
+	// Mark the destination address as ready for dialing
+	source.DisconnectFromPeer(target, "test")
+
+	disconnectCtx, cancelFn := context.WithTimeout(context.Background(), leaveTimeout)
+	defer cancelFn()
+
+	// Wait for the peer to be disconnected
+	_, err := WaitUntilPeerDisconnectsFrom(disconnectCtx, source, target)
+
+	return err
+}
+
+func WaitUntilPeerConnectsTo(ctx context.Context, srv *Server, ids ...peer.ID) (bool, error) {
+	peersConnected := 0
+	targetPeers := len(ids)
+
+	res, err := tests.RetryUntilTimeout(ctx, func() (interface{}, bool) {
+		for _, v := range ids {
+			if srv.hasPeer(v) {
+				peersConnected++
+			}
+
+			if peersConnected == targetPeers {
+				return true, false
+			}
+		}
+
+		return nil, true
+	})
+	if err != nil {
+		return false, err
+	}
+
+	resVal, ok := res.(bool)
+	if !ok {
+		return false, errors.New("invalid type assert")
+	}
+
+	return resVal, nil
+}
+
+func WaitUntilPeerDisconnectsFrom(ctx context.Context, srv *Server, ids ...peer.ID) (bool, error) {
+	peersDisconnected := 0
+	targetPeers := len(ids)
+
+	res, err := tests.RetryUntilTimeout(ctx, func() (interface{}, bool) {
+		for _, v := range ids {
+			if !srv.hasPeer(v) {
+				peersDisconnected++
+			}
+
+			if peersDisconnected == targetPeers {
+				return true, false
+			}
+		}
+
+		return nil, true
+	})
+	if err != nil {
+		return false, err
+	}
+
+	resVal, ok := res.(bool)
+	if !ok {
+		return false, errors.New("invalid type assert")
+	}
+
+	return resVal, nil
+}
+
+// WaitUntilRoutingTableIsFilled check routing table has given ids and retry by timeout
+func WaitUntilRoutingTableIsFilled(ctx context.Context, srv *Server, size int) (bool, error) {
+	res, err := tests.RetryUntilTimeout(ctx, func() (interface{}, bool) {
+		if size == srv.discovery.RoutingTableSize() {
+			return true, false
+		}
+
+		return false, true
+	})
+	if err != nil {
+		return false, err
+	}
+
+	resVal, ok := res.(bool)
+	if !ok {
+		return false, errors.New("invalid type assert")
+	}
+
+	return resVal, nil
+}
+
+// constructMultiAddrs is a helper function for converting raw IPs to mutliaddrs
+func constructMultiAddrs(addresses []string) ([]multiaddr.Multiaddr, error) {
+	returnAddrs := make([]multiaddr.Multiaddr, 0)
+
+	for _, addr := range addresses {
+		multiAddr, err := multiaddr.NewMultiaddr(addr)
+		if err != nil {
+			return nil, err
+		}
+
+		returnAddrs = append(returnAddrs, multiAddr)
+	}
+
+	return returnAddrs, nil
+}
+
+func createServers(
+	count int,
+	paramsMap map[int]*CreateServerParams,
+) ([]*Server, error) {
+	servers := make([]*Server, count)
+
+	if paramsMap == nil {
+		paramsMap = map[int]*CreateServerParams{}
+	}
+
+	for i := 0; i < count; i++ {
+		server, createErr := CreateServer(paramsMap[i])
+		if createErr != nil {
+			return nil, createErr
+		}
+
+		servers[i] = server
+	}
+
+	return servers, nil
+}
+
+type CreateServerParams struct {
+	ConfigCallback func(c *Config)      // Additional logic that needs to be executed on the configuration
+	ServerCallback func(server *Server) // Additional logic that needs to be executed on the server before starting
+	Logger         hclog.Logger
+}
+
+var (
+	emptyParams = &CreateServerParams{}
+)
+
+/* START ALPHA CHANGE 659 -- remove legacy e2e bootnode helper -- */
+/* FINISH ALPHA CHANGE 659 -- remove legacy e2e bootnode helper -- */
+
+func CreateServer(params *CreateServerParams) (*Server, error) {
+	cfg := DefaultConfig()
+	port, portErr := tests.GetFreePort()
+
+	if portErr != nil {
+		return nil, fmt.Errorf("unable to fetch free port, %w", portErr)
+	}
+
+	cfg.Addr.Port = port
+	cfg.Chain = &chain.Chain{
+		Params: &chain.Params{
+			ChainID: 1,
+		},
+	}
+
+	if params == nil {
+		params = emptyParams
+	}
+
+	if params.ConfigCallback != nil {
+		params.ConfigCallback(cfg)
+	}
+
+	if params.Logger == nil {
+		params.Logger = hclog.NewNullLogger()
+	}
+
+	/* START ALPHA CHANGE 3234 -- initialize networking test identities through the simplified local factory -- */
+	secretsManager, factoryErr := local.SecretsManagerFactory(
+		&secrets.SecretsManagerParams{
+			Logger: params.Logger,
+			Extra: map[string]interface{}{
+				secrets.Path: cfg.DataDir,
+			},
+		},
+	)
+	/* FINISH ALPHA CHANGE 3234 -- initialize networking test identities through the simplified local factory -- */
+	if factoryErr != nil {
+		return nil, factoryErr
+	}
+
+	cfg.SecretsManager = secretsManager
+
+	server, err := NewServer(params.Logger, cfg)
+	if err != nil {
+		return nil, err
+	}
+
+	/* START ALPHA CHANGE 660 -- stop auto-seeding legacy e2e bootnodes -- */
+	/* FINISH ALPHA CHANGE 660 -- stop auto-seeding legacy e2e bootnodes -- */
+
+	if params.ServerCallback != nil {
+		params.ServerCallback(server)
+	}
+
+	startErr := server.Start()
+
+	return server, startErr
+}
+
+// MeshJoin is a helper method for joining all the passed in servers into a mesh
+func MeshJoin(servers ...*Server) []error {
+	if len(servers) < 2 {
+		return nil
+	}
+
+	// Join errors are used to gather all errors that happen
+	// inside the go routines, so they can be handled when they finish
+	joinErrors := make([]error, 0)
+
+	var joinErrorsLock sync.Mutex
+
+	appendJoinError := func(joinErr error) {
+		joinErrorsLock.Lock()
+		joinErrors = append(joinErrors, joinErr)
+		joinErrorsLock.Unlock()
+	}
+
+	numServers := len(servers)
+
+	var wg sync.WaitGroup
+
+	for sourceIdx := 0; sourceIdx < numServers; sourceIdx++ {
+		for destIdx := 0; destIdx < numServers; destIdx++ {
+			if destIdx > sourceIdx {
+				wg.Add(1)
+
+				go func(src, dest int) {
+					defer wg.Done()
+
+					if joinErr := JoinAndWait(
+						servers[src],
+						servers[dest],
+						DefaultBufferTimeout,
+						DefaultJoinTimeout,
+					); joinErr != nil {
+						appendJoinError(fmt.Errorf("unable to join peers %d -> %d, %w", src, dest, joinErr))
+					}
+				}(sourceIdx, destIdx)
+			}
+		}
+	}
+
+	wg.Wait()
+
+	return joinErrors
+}
+
+func GenerateTestLibp2pKey(t *testing.T) (crypto.PrivKey, string) {
+	t.Helper()
+
+	dir, err := os.MkdirTemp(os.TempDir(), "")
+	assert.NoError(t, err)
+
+	/* START ALPHA CHANGE 1635 -- let the local manager create the canonical libp2p key path -- */
+	/* START ALPHA CHANGE 3234 -- generate test networking keys without remote configuration parameters -- */
+	localSecretsManager, factoryErr := local.SecretsManagerFactory(
+		&secrets.SecretsManagerParams{
+			Logger: hclog.NewNullLogger(),
+			Extra: map[string]interface{}{
+				secrets.Path: dir,
+			},
+		},
+	)
+	/* FINISH ALPHA CHANGE 3234 -- generate test networking keys without remote configuration parameters -- */
+	/* FINISH ALPHA CHANGE 1635 -- let the local manager create the canonical libp2p key path -- */
+	assert.NoError(t, factoryErr)
+
+	libp2pKey, libp2pKeyEncoded, keyErr := GenerateAndEncodeLibp2pKey()
+	if keyErr != nil {
+		t.Fatalf("unable to generate libp2p key, %v", keyErr)
+	}
+
+	if setErr := localSecretsManager.SetSecret(secrets.NetworkKey, libp2pKeyEncoded); setErr != nil {
+		t.Fatalf("unable to save libp2p key, %v", setErr)
+	}
+
+	t.Cleanup(func() {
+		// remove directory after test is done
+		_ = os.RemoveAll(dir)
+	})
+
+	return libp2pKey, dir
+}
+
+func closeTestServers(t *testing.T, servers []*Server) {
+	t.Helper()
+
+	for _, server := range servers {
+		assert.NoError(t, server.Close())
+	}
+}

@@ -1,0 +1,102 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "System",
+  "sourceName": "contracts/child/System.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "ALLOWLIST_PRECOMPILE",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "BLOCKLIST_PRECOMPILE",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "NATIVE_TOKEN_CONTRACT",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "NATIVE_TRANSFER_PRECOMPILE",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "NATIVE_TRANSFER_PRECOMPILE_GAS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "READ_ADDRESSLIST_GAS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "SYSTEM",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610110806100206000396000f3fe6080604052348015600f57600080fd5b506004361060645760003560e01c806307b3e252146069578063284017f51460935780633b878c2214609b57806351351d531460a357806355b01e4d1460b05780635ea5df791460bd578063947287cf1460d2575b600080fd5b60766004600360981b0181565b6040516001600160a01b0390911681526020015b60405180910390f35b607661202081565b607661101081565b60766002600160a01b0381565b60766004600160991b0181565b60c561138881565b604051908152602001608a565b60c56152088156fea26469706673582212204aecc759d3b4c75b40bb4dc5107f2d2a366809f1c00ff5e29c0349b9f19f92d564736f6c63430008130033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060645760003560e01c806307b3e252146069578063284017f51460935780633b878c2214609b57806351351d531460a357806355b01e4d1460b05780635ea5df791460bd578063947287cf1460d2575b600080fd5b60766004600360981b0181565b6040516001600160a01b0390911681526020015b60405180910390f35b607661202081565b607661101081565b60766002600160a01b0381565b60766004600160991b0181565b60c561138881565b604051908152602001608a565b60c56152088156fea26469706673582212204aecc759d3b4c75b40bb4dc5107f2d2a366809f1c00ff5e29c0349b9f19f92d564736f6c63430008130033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

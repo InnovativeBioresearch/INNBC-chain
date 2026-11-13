@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package v1;
+
+option go_package = "/consensus/innbcbft/proto";
+
+message TransportMessage {
+  bytes data = 1;
+}

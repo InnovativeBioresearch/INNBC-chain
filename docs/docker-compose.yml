@@ -1,0 +1,15 @@
+# START ALPHA CHANGE 1037 -- rename docs docker compose service for INNBC --
+version: "3.6"
+
+services:
+  developer-docs:
+      image: "innbc-chain-docs"
+      ports:
+      - "0.0.0.0:8000:8000"
+      container_name: "serve-innbc-docs"
+      working_dir: /workspace/
+      volumes:
+        - type: bind
+          source: .
+          target: /workspace
+# FINISH ALPHA CHANGE 1037 -- rename docs docker compose service for INNBC --

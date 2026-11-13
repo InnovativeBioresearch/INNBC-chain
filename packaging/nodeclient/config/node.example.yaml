@@ -1,0 +1,72 @@
+# START ALPHA CHANGE 748 -- add example INNBC node environment config values --
+# START ALPHA CHANGE 3380 -- explain inspection scope in the packaged profile reference --
+# Profile reference only; node info inspects actual nodeN.env files, not this YAML.
+# After provisioning, inspect stored identities and environments:
+# sudo innbc-chain node info node1
+# sudo innbc-chain node info all
+# Inspection is read-only, prints public values and reports incomplete occupied slots.
+# It does not repair files or establish full runtime configuration validity.
+# FINISH ALPHA CHANGE 3380 -- explain inspection scope in the packaged profile reference --
+# START ALPHA CHANGE 759 -- document MDBX storage used by node runtime --
+# Persistent blockchain and trie data are stored with MDBX by the node binary.
+# FINISH ALPHA CHANGE 759 -- document MDBX storage used by node runtime --
+private_local:
+  chain: /etc/innbc/genesis.json
+  data_dir: /var/lib/innbc/node1
+  jsonrpc: 127.0.0.1:8545
+  grpc: 127.0.0.1:9632
+  libp2p: 127.0.0.1:30301
+  # START ALPHA CHANGE 1214 -- document optional private-local advertised peer addresses --
+  nat: ""
+  dns: ""
+  # FINISH ALPHA CHANGE 1214 -- document optional private-local advertised peer addresses --
+  # START ALPHA CHANGE 1166 -- document private-local JSON-RPC safety limits --
+  json_rpc_block_range_limit: 256
+  json_rpc_fee_history_block_limit: 256
+  # FINISH ALPHA CHANGE 1166 -- document private-local JSON-RPC safety limits --
+  peer_directory_enabled: true
+  peer_directory_url: http://127.0.0.1:8080/api/v1/peers/exchange
+  # START ALPHA CHANGE 842 -- document full local history defaults for private-local profile --
+  history_mode: full
+  # START ALPHA CHANGE 1737 -- configure independent checkpoint snapshot consumption --
+  snapshot_source_dir: /var/lib/innbc/snapshots/checkpoint
+  snapshot_bootstrap_required: false
+  # FINISH ALPHA CHANGE 1737 -- configure independent checkpoint snapshot consumption --
+  # START ALPHA CHANGE 3065 -- configure private full-history storage with one TiB --
+  mdbx_map_size_gb: 1024
+  # FINISH ALPHA CHANGE 3065 -- configure private full-history storage with one TiB --
+  # START ALPHA CHANGE 3511 -- document private profile database pages --
+  mdbx_page_size_bytes: 4096
+  # FINISH ALPHA CHANGE 3511 -- document private profile database pages --
+  # FINISH ALPHA CHANGE 842 -- document full local history defaults for private-local profile --
+
+external_validator:
+  chain: /etc/innbc/genesis.json
+  data_dir: /var/lib/innbc/node1
+  jsonrpc: 127.0.0.1:8545
+  grpc: 127.0.0.1:9632
+  libp2p: 0.0.0.0:30301
+  # START ALPHA CHANGE 1215 -- document external-validator advertised peer address fields --
+  nat: ""
+  dns: ""
+  # FINISH ALPHA CHANGE 1215 -- document external-validator advertised peer address fields --
+  # START ALPHA CHANGE 1167 -- document external-validator JSON-RPC safety limits --
+  json_rpc_block_range_limit: 256
+  json_rpc_fee_history_block_limit: 256
+  # FINISH ALPHA CHANGE 1167 -- document external-validator JSON-RPC safety limits --
+  peer_directory_enabled: true
+  peer_directory_url: https://innbcchain.io/api/v1/peers/exchange
+  # START ALPHA CHANGE 843 -- document full local history defaults for external-validator profile --
+  history_mode: full
+  # START ALPHA CHANGE 1759 -- configure independent external checkpoint snapshot consumption --
+  snapshot_source_dir: /var/lib/innbc/snapshots/checkpoint
+  snapshot_bootstrap_required: false
+  # START ALPHA CHANGE 3065 -- configure external full-history storage with one TiB --
+  mdbx_map_size_gb: 1024
+  # FINISH ALPHA CHANGE 3065 -- configure external full-history storage with one TiB --
+  # START ALPHA CHANGE 3511 -- document external profile database pages --
+  mdbx_page_size_bytes: 4096
+  # FINISH ALPHA CHANGE 3511 -- document external profile database pages --
+  # FINISH ALPHA CHANGE 1759 -- configure independent external checkpoint snapshot consumption --
+  # FINISH ALPHA CHANGE 843 -- document full local history defaults for external-validator profile --
+# FINISH ALPHA CHANGE 748 -- add example INNBC node environment config values --

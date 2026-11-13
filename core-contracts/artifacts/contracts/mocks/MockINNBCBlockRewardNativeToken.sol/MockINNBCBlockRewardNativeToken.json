@@ -1,0 +1,103 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockINNBCBlockRewardNativeToken",
+  "sourceName": "contracts/mocks/MockINNBCBlockRewardNativeToken.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "initialSupply",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "issueEmergencyBlockReward",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161025338038061025383398101604081905261002f91610037565b600055610050565b60006020828403121561004957600080fd5b5051919050565b6101f48061005f6000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806318160ddd1461004657806370a08231146100625780638767c54a14610082575b600080fd5b61004f60005481565b6040519081526020015b60405180910390f35b61004f610070366004610151565b60016020526000908152604090205481565b610095610090366004610173565b6100a5565b6040519015158152602001610059565b6000816000808282546100b8919061019d565b90915550506001600160a01b038316600090815260016020526040812080548492906100e590849061019d565b90915550506040518281526001600160a01b038416906000907fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9060200160405180910390a35060015b92915050565b80356001600160a01b038116811461014c57600080fd5b919050565b60006020828403121561016357600080fd5b61016c82610135565b9392505050565b6000806040838503121561018657600080fd5b61018f83610135565b946020939093013593505050565b8082018082111561012f57634e487b7160e01b600052601160045260246000fdfea26469706673582212202056257399477968b47a5b5e0ac13cda86fa2754a0fe1e2f2d1cac33a007d88f64736f6c63430008130033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806318160ddd1461004657806370a08231146100625780638767c54a14610082575b600080fd5b61004f60005481565b6040519081526020015b60405180910390f35b61004f610070366004610151565b60016020526000908152604090205481565b610095610090366004610173565b6100a5565b6040519015158152602001610059565b6000816000808282546100b8919061019d565b90915550506001600160a01b038316600090815260016020526040812080548492906100e590849061019d565b90915550506040518281526001600160a01b038416906000907fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9060200160405180910390a35060015b92915050565b80356001600160a01b038116811461014c57600080fd5b919050565b60006020828403121561016357600080fd5b61016c82610135565b9392505050565b6000806040838503121561018657600080fd5b61018f83610135565b946020939093013593505050565b8082018082111561012f57634e487b7160e01b600052601160045260246000fdfea26469706673582212202056257399477968b47a5b5e0ac13cda86fa2754a0fe1e2f2d1cac33a007d88f64736f6c63430008130033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

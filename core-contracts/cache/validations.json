@@ -1,0 +1,3373 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:Initializable": {
+        "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:58",
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol:AddressUpgradeable"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_initialized",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint8",
+              "contract": "Initializable",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+              "retypedFrom": "bool"
+            },
+            {
+              "label": "_initializing",
+              "offset": 1,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "Initializable",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+            }
+          ],
+          "types": {
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol:AddressUpgradeable": {
+        "src": "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol:9",
+        "version": {
+          "withMetadata": "3cb25d3cf2848e95361b0dcff09bca018ba6f983b7090598e03dc1a29cc3a06c",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol:185"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/interfaces/IERC1967.sol:IERC1967": {
+        "src": "@openzeppelin/contracts/interfaces/IERC1967.sol:11",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/interfaces/draft-IERC1822.sol:IERC1822Proxiable": {
+        "src": "@openzeppelin/contracts/interfaces/draft-IERC1822.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "proxiableUUID()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol:ERC1967Proxy": {
+        "src": "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol:15",
+        "version": {
+          "withMetadata": "89a3f335aea044a2445a13af0ba79ddda42664b5dd799a549fc75e64704a8554",
+          "withoutMetadata": "89a3f335aea044a2445a13af0ba79ddda42664b5dd799a549fc75e64704a8554",
+          "linkedWithoutMetadata": "89a3f335aea044a2445a13af0ba79ddda42664b5dd799a549fc75e64704a8554"
+        },
+        "inherit": [
+          "@openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol:ERC1967Upgrade",
+          "@openzeppelin/contracts/interfaces/IERC1967.sol:IERC1967",
+          "@openzeppelin/contracts/proxy/Proxy.sol:Proxy"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC1967Proxy",
+            "src": "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol:22"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol:ERC1967Upgrade": {
+        "src": "@openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol:18",
+        "inherit": [
+          "@openzeppelin/contracts/interfaces/IERC1967.sol:IERC1967"
+        ],
+        "libraries": [
+          "@openzeppelin/contracts/utils/StorageSlot.sol:StorageSlot",
+          "@openzeppelin/contracts/utils/Address.sol:Address"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/proxy/Proxy.sol:Proxy": {
+        "src": "@openzeppelin/contracts/proxy/Proxy.sol:16",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/proxy/beacon/IBeacon.sol:IBeacon": {
+        "src": "@openzeppelin/contracts/proxy/beacon/IBeacon.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "implementation()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol:ITransparentUpgradeableProxy": {
+        "src": "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol:14",
+        "inherit": [
+          "@openzeppelin/contracts/interfaces/IERC1967.sol:IERC1967"
+        ],
+        "libraries": [],
+        "methods": [
+          "admin()",
+          "implementation()",
+          "changeAdmin(address)",
+          "upgradeTo(address)",
+          "upgradeToAndCall(address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol:TransparentUpgradeableProxy": {
+        "src": "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol:58",
+        "version": {
+          "withMetadata": "8fd122bc9135b39053a21063c91fa7fd49265594082a5e7b93569f13131eb6b5",
+          "withoutMetadata": "8fd122bc9135b39053a21063c91fa7fd49265594082a5e7b93569f13131eb6b5",
+          "linkedWithoutMetadata": "8fd122bc9135b39053a21063c91fa7fd49265594082a5e7b93569f13131eb6b5"
+        },
+        "inherit": [
+          "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol:ERC1967Proxy",
+          "@openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol:ERC1967Upgrade",
+          "@openzeppelin/contracts/interfaces/IERC1967.sol:IERC1967",
+          "@openzeppelin/contracts/proxy/Proxy.sol:Proxy"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "TransparentUpgradeableProxy",
+            "src": "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol:63"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/proxy/utils/Initializable.sol:Initializable": {
+        "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:58",
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts/utils/Address.sol:Address"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "_initialized",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint8",
+              "contract": "Initializable",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:63",
+              "retypedFrom": "bool"
+            },
+            {
+              "label": "_initializing",
+              "offset": 1,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "Initializable",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:68"
+            }
+          ],
+          "types": {
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/token/ERC20/ERC20.sol:ERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:38",
+        "version": {
+          "withMetadata": "fb8cf141443cec3664e45ae424b54f4ce3aaa8bf071b4fcdb51d24980d7f793c",
+          "withoutMetadata": "b88954434c1323bef884c814f309755275a30d00fbd7290dedb8d43b871933fc",
+          "linkedWithoutMetadata": "b88954434c1323bef884c814f309755275a30d00fbd7290dedb8d43b871933fc"
+        },
+        "inherit": [
+          "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:IERC20Metadata",
+          "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20",
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:54"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:39"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:41"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:43"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:45"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:46"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:IERC20Metadata": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:13",
+        "inherit": [
+          "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "decimals()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol:IERC20Permit": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol:14",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+          "nonces(address)",
+          "DOMAIN_SEPARATOR()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:19",
+        "version": {
+          "withMetadata": "04967d25c1a25bac8f84f92a69858a945bdb12952bd9d79bd1007e8ed9da072c",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts/utils/Address.sol:Address"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/utils/Address.sol:Address": {
+        "src": "@openzeppelin/contracts/utils/Address.sol:9",
+        "version": {
+          "withMetadata": "1dba99791bd6ec4adeabb4e7bacb21bfd4f63f07a2e21abab1bc514b4b5fdc61",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/utils/Context.sol:Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:16",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/utils/StorageSlot.sol:StorageSlot": {
+        "src": "@openzeppelin/contracts/utils/StorageSlot.sol:34",
+        "version": {
+          "withMetadata": "f4c3d9f5dc987da903ddf6093abe71fe9413acb2657f5e2afe61111f88b31c21",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/utils/math/Math.sol:Math": {
+        "src": "@openzeppelin/contracts/utils/math/Math.sol:9",
+        "version": {
+          "withMetadata": "3785a1a96d6452a0d84673fd24e5a2dbdeaa994963a668776541ff2db5c61006",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/child/INNBCNativeToken.sol:INNBCNativeToken": {
+        "src": "contracts/child/INNBCNativeToken.sol:18",
+        "version": {
+          "withMetadata": "d6f28fe7679f539effc6412975a7b854d40231c31f966fba649d88c5715a12b0",
+          "withoutMetadata": "d7b6fa361dc394828cc904340523a22422f71abb83e47ae9f662b1435f1f2e16",
+          "linkedWithoutMetadata": "d7b6fa361dc394828cc904340523a22422f71abb83e47ae9f662b1435f1f2e16"
+        },
+        "inherit": [
+          "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:IERC20Metadata",
+          "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20",
+          "contracts/child/System.sol:System",
+          "@openzeppelin/contracts/proxy/utils/Initializable.sol:Initializable",
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "()",
+          "initialize(address,address,address,string,string,uint8,uint256)",
+          "transfer(address,uint256)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)",
+          "issueEmergencyBlockReward(address,uint256)",
+          "burn(uint256)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "allowance(address,address)",
+          "predicate()",
+          "blockRewardIssuer()",
+          "rootToken()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "INNBCNativeToken",
+            "src": "contracts/child/INNBCNativeToken.sol:39"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_initialized",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint8",
+              "contract": "Initializable",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:63",
+              "retypedFrom": "bool"
+            },
+            {
+              "label": "_initializing",
+              "offset": 1,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "Initializable",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:68"
+            },
+            {
+              "label": "__gap",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_uint256)50_storage",
+              "contract": "System",
+              "src": "contracts/child/System.sol:33"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "51",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "INNBCNativeToken",
+              "src": "contracts/child/INNBCNativeToken.sol:19"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "52",
+              "type": "t_uint256",
+              "contract": "INNBCNativeToken",
+              "src": "contracts/child/INNBCNativeToken.sol:21"
+            },
+            {
+              "label": "_predicate",
+              "offset": 0,
+              "slot": "53",
+              "type": "t_address",
+              "contract": "INNBCNativeToken",
+              "src": "contracts/child/INNBCNativeToken.sol:22"
+            },
+            {
+              "label": "_blockRewardIssuer",
+              "offset": 0,
+              "slot": "54",
+              "type": "t_address",
+              "contract": "INNBCNativeToken",
+              "src": "contracts/child/INNBCNativeToken.sol:24"
+            },
+            {
+              "label": "_rootToken",
+              "offset": 0,
+              "slot": "55",
+              "type": "t_address",
+              "contract": "INNBCNativeToken",
+              "src": "contracts/child/INNBCNativeToken.sol:26"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "56",
+              "type": "t_string_storage",
+              "contract": "INNBCNativeToken",
+              "src": "contracts/child/INNBCNativeToken.sol:27"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "57",
+              "type": "t_string_storage",
+              "contract": "INNBCNativeToken",
+              "src": "contracts/child/INNBCNativeToken.sol:28"
+            },
+            {
+              "label": "_decimals",
+              "offset": 0,
+              "slot": "58",
+              "type": "t_uint8",
+              "contract": "INNBCNativeToken",
+              "src": "contracts/child/INNBCNativeToken.sol:29"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_uint256)50_storage": {
+              "label": "uint256[50]",
+              "numberOfBytes": "1600"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/child/System.sol:System": {
+        "src": "contracts/child/System.sol:6",
+        "version": {
+          "withMetadata": "b301dc7f57965c730fee5e7c070fcd1456e6993ef547254515a9e0040211cf6d",
+          "withoutMetadata": "9a3c7534c5e61282985a497ef8f51e043d05a79fe10395d3b2e1d1e683429c78",
+          "linkedWithoutMetadata": "9a3c7534c5e61282985a497ef8f51e043d05a79fe10395d3b2e1d1e683429c78"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "__gap",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_uint256)50_storage",
+              "contract": "System",
+              "src": "contracts/child/System.sol:33"
+            }
+          ],
+          "types": {
+            "t_array(t_uint256)50_storage": {
+              "label": "uint256[50]",
+              "numberOfBytes": "1600"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/child/validator/ValidatorSet.sol:ValidatorSet": {
+        "src": "contracts/child/validator/ValidatorSet.sol:13",
+        "version": {
+          "withMetadata": "698a48036c763234da463964f89f64197e8f542728f98628af9d2d6749260ebb",
+          "withoutMetadata": "eacc5104d8a9aaaaf1caf026ba38df66216487f366ff90d6c6e8db1dd1623b61",
+          "linkedWithoutMetadata": "eacc5104d8a9aaaaf1caf026ba38df66216487f366ff90d6c6e8db1dd1623b61"
+        },
+        "inherit": [
+          "contracts/child/System.sol:System",
+          "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:Initializable",
+          "contracts/interfaces/child/validator/IValidatorSet.sol:IValidatorSet"
+        ],
+        "libraries": [],
+        "methods": [
+          "()",
+          "initialize(uint256)",
+          "commitEpoch(uint256,(uint256,uint256,bytes32))",
+          "totalBlocks(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ValidatorSet",
+            "src": "contracts/child/validator/ValidatorSet.sol:22"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_initialized",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint8",
+              "contract": "Initializable",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+              "retypedFrom": "bool"
+            },
+            {
+              "label": "_initializing",
+              "offset": 1,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "Initializable",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+            },
+            {
+              "label": "__gap",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_uint256)50_storage",
+              "contract": "System",
+              "src": "contracts/child/System.sol:33"
+            },
+            {
+              "label": "EPOCH_SIZE",
+              "offset": 0,
+              "slot": "51",
+              "type": "t_uint256",
+              "contract": "ValidatorSet",
+              "src": "contracts/child/validator/ValidatorSet.sol:15"
+            },
+            {
+              "label": "currentEpochId",
+              "offset": 0,
+              "slot": "52",
+              "type": "t_uint256",
+              "contract": "ValidatorSet",
+              "src": "contracts/child/validator/ValidatorSet.sol:17"
+            },
+            {
+              "label": "epochs",
+              "offset": 0,
+              "slot": "53",
+              "type": "t_mapping(t_uint256,t_struct(Epoch)13322_storage)",
+              "contract": "ValidatorSet",
+              "src": "contracts/child/validator/ValidatorSet.sol:19"
+            },
+            {
+              "label": "epochEndBlocks",
+              "offset": 0,
+              "slot": "54",
+              "type": "t_array(t_uint256)dyn_storage",
+              "contract": "ValidatorSet",
+              "src": "contracts/child/validator/ValidatorSet.sol:20"
+            }
+          ],
+          "types": {
+            "t_array(t_uint256)50_storage": {
+              "label": "uint256[50]",
+              "numberOfBytes": "1600"
+            },
+            "t_array(t_uint256)dyn_storage": {
+              "label": "uint256[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_bytes32": {
+              "label": "bytes32",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Epoch)13322_storage)": {
+              "label": "mapping(uint256 => struct Epoch)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Epoch)13322_storage": {
+              "label": "struct Epoch",
+              "members": [
+                {
+                  "label": "startBlock",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "endBlock",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "epochRoot",
+                  "type": "t_bytes32",
+                  "offset": 0,
+                  "slot": "2"
+                }
+              ],
+              "numberOfBytes": "96"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/common/BLS.sol:BLS": {
+        "src": "contracts/common/BLS.sol:37",
+        "version": {
+          "withMetadata": "fb1cce8a8b0ef3ff0b54b0513c0b909518e2b272d1ef8acc93173050d22c4b94",
+          "withoutMetadata": "19bbe82061e328c58291a07411a7d98f7669e706616405e8a70a8e69df4a5e17",
+          "linkedWithoutMetadata": "19bbe82061e328c58291a07411a7d98f7669e706616405e8a70a8e69df4a5e17"
+        },
+        "inherit": [
+          "contracts/interfaces/common/IBLS.sol:IBLS"
+        ],
+        "libraries": [
+          "contracts/lib/ModExp.sol:ModexpSqrt",
+          "contracts/lib/ModExp.sol:ModexpInverse"
+        ],
+        "methods": [
+          "verifySingle(uint256[2],uint256[4],uint256[2])",
+          "verifyMultiple(uint256[2],uint256[4][],uint256[2][])",
+          "verifyMultipleSameMsg(uint256[2],uint256[4][],uint256[2])",
+          "hashToPoint(bytes32,bytes)",
+          "mapToPoint(uint256)",
+          "isValidSignature(uint256[2])",
+          "isOnCurveG1(uint256[2])",
+          "isOnCurveG2(uint256[4])",
+          "hashToField(bytes32,bytes)",
+          "expandMsgTo96(bytes32,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/IINNBCValidatorRegistry.sol:IINNBCValidatorRegistry": {
+        "src": "contracts/innbc/IINNBCValidatorRegistry.sol:5",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "activeValidatorCount()",
+          "minimumStake()",
+          "proposalDurationBlocks()",
+          "nativeToken()",
+          "getActiveValidators()",
+          "validators(address)",
+          "whitelistValidator(address)",
+          "removeValidator(address)",
+          "updateMinimumStake(uint256)",
+          "updateProposalDurationPreset(uint8)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCBlockRewardGovernance.sol:IINNBCBlockRewardCommunityRewardPool": {
+        "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:22",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "communityRewardRateBps()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCBlockRewardGovernance.sol:IINNBCBlockRewardNativeToken": {
+        "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:14",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "issueEmergencyBlockReward(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCBlockRewardGovernance.sol:INNBCBlockRewardGovernance": {
+        "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:27",
+        "version": {
+          "withMetadata": "b0a0c91997a04dc54ef049667818ba2103a9da7afc2dc1a3655859b040311860",
+          "withoutMetadata": "a0ccae00a6ba2f4bd2ed3fff83cf5493d783103ea71cb4253ac9a7ae275463a4",
+          "linkedWithoutMetadata": "a0ccae00a6ba2f4bd2ed3fff83cf5493d783103ea71cb4253ac9a7ae275463a4"
+        },
+        "inherit": [],
+        "libraries": [
+          "contracts/innbc/INNBCGovernanceElectorate.sol:INNBCGovernanceElectorate",
+          "@openzeppelin/contracts/utils/math/Math.sol:Math"
+        ],
+        "methods": [
+          "initialize(address,address,address)",
+          "getActiveProposalIDs()",
+          "createOnePercentEmergencyRewardProposal()",
+          "createTwoPercentEmergencyRewardProposal()",
+          "createThreePercentEmergencyRewardProposal()",
+          "createUseZeroFeeBurnRateProposal()",
+          "createUseTenPercentFeeBurnRateProposal()",
+          "createUseTwentyFivePercentFeeBurnRateProposal()",
+          "createUseFiftyPercentFeeBurnRateProposal()",
+          "createUseSeventyPercentFeeBurnRateProposal()",
+          "createUseNinetyPercentFeeBurnRateProposal()",
+          "createUseOneHundredPercentFeeBurnRateProposal()",
+          "createUpdateMaxBaseFeeProposal(uint256)",
+          "vote(uint256,bool)",
+          "finalizeProposal(uint256)",
+          "maxBaseFeeWei()",
+          "feeBurnRateBps()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "validatorRegistry",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "INNBCBlockRewardGovernance",
+              "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:73"
+            },
+            {
+              "label": "nativeToken",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "INNBCBlockRewardGovernance",
+              "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:74"
+            },
+            {
+              "label": "communityRewardPool",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_address",
+              "contract": "INNBCBlockRewardGovernance",
+              "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:76"
+            },
+            {
+              "label": "initialized",
+              "offset": 20,
+              "slot": "2",
+              "type": "t_bool",
+              "contract": "INNBCBlockRewardGovernance",
+              "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:78"
+            },
+            {
+              "label": "lastEmergencyRewardBlock",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_uint256",
+              "contract": "INNBCBlockRewardGovernance",
+              "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:83"
+            },
+            {
+              "label": "emergencyRewardProposalActive",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_bool",
+              "contract": "INNBCBlockRewardGovernance",
+              "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:84"
+            },
+            {
+              "label": "nextProposalID",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_uint256",
+              "contract": "INNBCBlockRewardGovernance",
+              "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:85"
+            },
+            {
+              "label": "proposals",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_mapping(t_uint256,t_struct(Proposal)6042_storage)",
+              "contract": "INNBCBlockRewardGovernance",
+              "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:87"
+            },
+            {
+              "label": "hasVoted",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+              "contract": "INNBCBlockRewardGovernance",
+              "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:88"
+            },
+            {
+              "label": "activeProposalIDs",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_array(t_uint256)dyn_storage",
+              "contract": "INNBCBlockRewardGovernance",
+              "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:90"
+            },
+            {
+              "label": "activeProposalIndexPlusOne",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_mapping(t_uint256,t_uint256)",
+              "contract": "INNBCBlockRewardGovernance",
+              "src": "contracts/innbc/INNBCBlockRewardGovernance.sol:91"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_uint256)dyn_storage": {
+              "label": "uint256[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_enum(ProposalType)6022": {
+              "label": "enum INNBCBlockRewardGovernance.ProposalType",
+              "members": [
+                "EmergencyReward",
+                "UpdateFeeBurnRate",
+                "UpdateMaxBaseFee"
+              ],
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+              "label": "mapping(uint256 => mapping(address => bool))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Proposal)6042_storage)": {
+              "label": "mapping(uint256 => struct INNBCBlockRewardGovernance.Proposal)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_uint256)": {
+              "label": "mapping(uint256 => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Proposal)6042_storage": {
+              "label": "struct INNBCBlockRewardGovernance.Proposal",
+              "members": [
+                {
+                  "label": "proposalType",
+                  "type": "t_enum(ProposalType)6022",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "emergencyRewardRateBps",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "newFeeBurnRateBps",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "newMaxBaseFeeWei",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "yesVotes",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "noVotes",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "deadlineBlock",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "finalized",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "passed",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "7"
+                }
+              ],
+              "numberOfBytes": "256"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCCommunityRewardPool.sol:IINNBCCommunityRewardBlockRewardGovernance": {
+        "src": "contracts/innbc/INNBCCommunityRewardPool.sol:14",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "feeBurnRateBps()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCCommunityRewardPool.sol:INNBCCommunityRewardPool": {
+        "src": "contracts/innbc/INNBCCommunityRewardPool.sol:18",
+        "version": {
+          "withMetadata": "621fe3214faea59a93d3aa7d81313e70cd84edc1c500a878e75adc05e90653ef",
+          "withoutMetadata": "6ddcde5e46692d65379e2123f7b7cccde716f57c9a44cb085f424d6a6f1d7dde",
+          "linkedWithoutMetadata": "6ddcde5e46692d65379e2123f7b7cccde716f57c9a44cb085f424d6a6f1d7dde"
+        },
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts/utils/math/Math.sol:Math",
+          "contracts/innbc/INNBCGovernanceElectorate.sol:INNBCGovernanceElectorate"
+        ],
+        "methods": [
+          "()",
+          "initialize(address,address)",
+          "stake()",
+          "unstake(uint256)",
+          "claim()",
+          "earned(address)",
+          "communityRewardRateBps()",
+          "getActiveProposalIDs()",
+          "createUseZeroCommunityRewardRateProposal()",
+          "createUseFivePercentCommunityRewardRateProposal()",
+          "createUseTenPercentCommunityRewardRateProposal()",
+          "createUseTwentyFivePercentCommunityRewardRateProposal()",
+          "createUseFiftyPercentCommunityRewardRateProposal()",
+          "vote(uint256,bool)",
+          "finalizeProposal(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "validatorRegistry",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:45"
+            },
+            {
+              "label": "blockRewardGovernance",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:46"
+            },
+            {
+              "label": "initialized",
+              "offset": 20,
+              "slot": "1",
+              "type": "t_bool",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:47"
+            },
+            {
+              "label": "totalStaked",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:49"
+            },
+            {
+              "label": "rewardPerTokenStored",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_uint256",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:50"
+            },
+            {
+              "label": "accountedRewardBalance",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_uint256",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:51"
+            },
+            {
+              "label": "nextProposalID",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_uint256",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:54"
+            },
+            {
+              "label": "stakedBalance",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:56"
+            },
+            {
+              "label": "userRewardPerTokenPaid",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:57"
+            },
+            {
+              "label": "pendingRewards",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:58"
+            },
+            {
+              "label": "proposals",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_mapping(t_uint256,t_struct(Proposal)7312_storage)",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:59"
+            },
+            {
+              "label": "hasVoted",
+              "offset": 0,
+              "slot": "10",
+              "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:60"
+            },
+            {
+              "label": "activeProposalIDs",
+              "offset": 0,
+              "slot": "11",
+              "type": "t_array(t_uint256)dyn_storage",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:62"
+            },
+            {
+              "label": "activeProposalIndexPlusOne",
+              "offset": 0,
+              "slot": "12",
+              "type": "t_mapping(t_uint256,t_uint256)",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:63"
+            },
+            {
+              "label": "locked",
+              "offset": 0,
+              "slot": "13",
+              "type": "t_bool",
+              "contract": "INNBCCommunityRewardPool",
+              "src": "contracts/innbc/INNBCCommunityRewardPool.sol:66"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_uint256)dyn_storage": {
+              "label": "uint256[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_enum(ProposalType)7296": {
+              "label": "enum INNBCCommunityRewardPool.ProposalType",
+              "members": [
+                "UpdateCommunityRewardRate"
+              ],
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+              "label": "mapping(uint256 => mapping(address => bool))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Proposal)7312_storage)": {
+              "label": "mapping(uint256 => struct INNBCCommunityRewardPool.Proposal)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_uint256)": {
+              "label": "mapping(uint256 => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Proposal)7312_storage": {
+              "label": "struct INNBCCommunityRewardPool.Proposal",
+              "members": [
+                {
+                  "label": "proposalType",
+                  "type": "t_enum(ProposalType)7296",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "newCommunityRewardRateBps",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "yesVotes",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "noVotes",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "deadlineBlock",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "finalized",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "passed",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "5"
+                }
+              ],
+              "numberOfBytes": "192"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCFeeBurnVault.sol:IINNBCFeeBurnNativeToken": {
+        "src": "contracts/innbc/INNBCFeeBurnVault.sol:5",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "burn(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCFeeBurnVault.sol:INNBCFeeBurnVault": {
+        "src": "contracts/innbc/INNBCFeeBurnVault.sol:9",
+        "version": {
+          "withMetadata": "14d3bbedeb9cf8a312587f8164a6b24337959a5410e05c79d995e4cf8a07585e",
+          "withoutMetadata": "7b482e4c5970a1d380d7953fec1fa6221556222bfaa2a5eb62e783be87565b1a",
+          "linkedWithoutMetadata": "7b482e4c5970a1d380d7953fec1fa6221556222bfaa2a5eb62e783be87565b1a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "initialize(address)",
+          "burn()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "nativeToken",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "INNBCFeeBurnVault",
+              "src": "contracts/innbc/INNBCFeeBurnVault.sol:10"
+            },
+            {
+              "label": "initialized",
+              "offset": 20,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "INNBCFeeBurnVault",
+              "src": "contracts/innbc/INNBCFeeBurnVault.sol:11"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCGovernanceElectorate.sol:INNBCGovernanceElectorate": {
+        "src": "contracts/innbc/INNBCGovernanceElectorate.sol:7",
+        "version": {
+          "withMetadata": "88ecc553383d90e1ced0f7e6edfdcc3340a4b03ee0edad3f83aa0f113d08ddc8",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCProxyAdminExecutor.sol:INNBCProxyAdminExecutor": {
+        "src": "contracts/innbc/INNBCProxyAdminExecutor.sol:5",
+        "version": {
+          "withMetadata": "469965543289cd42b2703b1e1a1ab32780410a9750d3e81c19648e6132d10f00",
+          "withoutMetadata": "a8f027ecdf5612689349c99927c03e930e00a07c6d2aef6422d7c8d7dfb32090",
+          "linkedWithoutMetadata": "a8f027ecdf5612689349c99927c03e930e00a07c6d2aef6422d7c8d7dfb32090"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "initialize(address)",
+          "executeUpgrade(address,address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "governance",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "INNBCProxyAdminExecutor",
+              "src": "contracts/innbc/INNBCProxyAdminExecutor.sol:18"
+            },
+            {
+              "label": "initialized",
+              "offset": 20,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "INNBCProxyAdminExecutor",
+              "src": "contracts/innbc/INNBCProxyAdminExecutor.sol:19"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCProxyAdminGovernance.sol:IINNBCProxyAdminExecutor": {
+        "src": "contracts/innbc/INNBCProxyAdminGovernance.sol:11",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "executeUpgrade(address,address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCProxyAdminGovernance.sol:INNBCProxyAdminGovernance": {
+        "src": "contracts/innbc/INNBCProxyAdminGovernance.sol:16",
+        "version": {
+          "withMetadata": "0c16812608d7e421285939456fe1a1b0a646d18e9281f90ed6d7210b7dc632e1",
+          "withoutMetadata": "35cab583d7b9471ee672b620ba6e366b04313bf8ce44f82c9891692db264a3c4",
+          "linkedWithoutMetadata": "35cab583d7b9471ee672b620ba6e366b04313bf8ce44f82c9891692db264a3c4"
+        },
+        "inherit": [],
+        "libraries": [
+          "contracts/innbc/INNBCGovernanceElectorate.sol:INNBCGovernanceElectorate"
+        ],
+        "methods": [
+          "initialize(address,address)",
+          "getActiveProposalIDs()",
+          "createUpgradeProposal(address,address,bytes)",
+          "vote(uint256,bool)",
+          "finalizeProposal(uint256)",
+          "executeUpgrade(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "validatorRegistry",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "INNBCProxyAdminGovernance",
+              "src": "contracts/innbc/INNBCProxyAdminGovernance.sol:43"
+            },
+            {
+              "label": "proxyAdminExecutor",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "INNBCProxyAdminGovernance",
+              "src": "contracts/innbc/INNBCProxyAdminGovernance.sol:45"
+            },
+            {
+              "label": "initialized",
+              "offset": 20,
+              "slot": "1",
+              "type": "t_bool",
+              "contract": "INNBCProxyAdminGovernance",
+              "src": "contracts/innbc/INNBCProxyAdminGovernance.sol:47"
+            },
+            {
+              "label": "nextProposalID",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "INNBCProxyAdminGovernance",
+              "src": "contracts/innbc/INNBCProxyAdminGovernance.sol:48"
+            },
+            {
+              "label": "proposals",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_uint256,t_struct(UpgradeProposal)8878_storage)",
+              "contract": "INNBCProxyAdminGovernance",
+              "src": "contracts/innbc/INNBCProxyAdminGovernance.sol:50"
+            },
+            {
+              "label": "hasVoted",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+              "contract": "INNBCProxyAdminGovernance",
+              "src": "contracts/innbc/INNBCProxyAdminGovernance.sol:51"
+            },
+            {
+              "label": "activeProposalIDs",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_array(t_uint256)dyn_storage",
+              "contract": "INNBCProxyAdminGovernance",
+              "src": "contracts/innbc/INNBCProxyAdminGovernance.sol:53"
+            },
+            {
+              "label": "activeProposalIndexPlusOne",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_mapping(t_uint256,t_uint256)",
+              "contract": "INNBCProxyAdminGovernance",
+              "src": "contracts/innbc/INNBCProxyAdminGovernance.sol:54"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_uint256)dyn_storage": {
+              "label": "uint256[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_bytes_storage": {
+              "label": "bytes",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+              "label": "mapping(uint256 => mapping(address => bool))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(UpgradeProposal)8878_storage)": {
+              "label": "mapping(uint256 => struct INNBCProxyAdminGovernance.UpgradeProposal)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_uint256)": {
+              "label": "mapping(uint256 => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(UpgradeProposal)8878_storage": {
+              "label": "struct INNBCProxyAdminGovernance.UpgradeProposal",
+              "members": [
+                {
+                  "label": "proxy",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "implementation",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "data",
+                  "type": "t_bytes_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "yesVotes",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "noVotes",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "deadlineBlock",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "finalized",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "passed",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "6"
+                },
+                {
+                  "label": "executed",
+                  "type": "t_bool",
+                  "offset": 2,
+                  "slot": "6"
+                }
+              ],
+              "numberOfBytes": "224"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCTreasuryDAO.sol:IINNBCTreasuryNativeToken": {
+        "src": "contracts/innbc/INNBCTreasuryDAO.sol:17",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "burn(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCTreasuryDAO.sol:INNBCTreasuryDAO": {
+        "src": "contracts/innbc/INNBCTreasuryDAO.sol:21",
+        "version": {
+          "withMetadata": "09522c9c92d1e7f4df177b3a97bfea07c89183925e201a69969fd6f5cb84dbdb",
+          "withoutMetadata": "fd88796408f36783b17692ba0732e82918fd77a3d7ffd4fe6c204f548fcd3b6c",
+          "linkedWithoutMetadata": "fd88796408f36783b17692ba0732e82918fd77a3d7ffd4fe6c204f548fcd3b6c"
+        },
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20",
+          "contracts/innbc/INNBCGovernanceElectorate.sol:INNBCGovernanceElectorate"
+        ],
+        "methods": [
+          "()",
+          "initialize(address,address)",
+          "availableTreasuryBalance()",
+          "getActiveProposalIDs()",
+          "createTransferProposal(address,uint256)",
+          "createERC20TransferProposal(address,address,uint256)",
+          "createBurnProposal(uint256)",
+          "createLockProposal(uint256)",
+          "createUnlockProposal(uint256)",
+          "vote(uint256,bool)",
+          "finalizeProposal(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "validatorRegistry",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "INNBCTreasuryDAO",
+              "src": "contracts/innbc/INNBCTreasuryDAO.sol:50"
+            },
+            {
+              "label": "nativeToken",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "INNBCTreasuryDAO",
+              "src": "contracts/innbc/INNBCTreasuryDAO.sol:51"
+            },
+            {
+              "label": "initialized",
+              "offset": 20,
+              "slot": "1",
+              "type": "t_bool",
+              "contract": "INNBCTreasuryDAO",
+              "src": "contracts/innbc/INNBCTreasuryDAO.sol:52"
+            },
+            {
+              "label": "lockedTreasuryBalance",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "INNBCTreasuryDAO",
+              "src": "contracts/innbc/INNBCTreasuryDAO.sol:54"
+            },
+            {
+              "label": "nextProposalID",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_uint256",
+              "contract": "INNBCTreasuryDAO",
+              "src": "contracts/innbc/INNBCTreasuryDAO.sol:55"
+            },
+            {
+              "label": "proposals",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint256,t_struct(Proposal)9680_storage)",
+              "contract": "INNBCTreasuryDAO",
+              "src": "contracts/innbc/INNBCTreasuryDAO.sol:57"
+            },
+            {
+              "label": "hasVoted",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+              "contract": "INNBCTreasuryDAO",
+              "src": "contracts/innbc/INNBCTreasuryDAO.sol:58"
+            },
+            {
+              "label": "activeProposalIDs",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_array(t_uint256)dyn_storage",
+              "contract": "INNBCTreasuryDAO",
+              "src": "contracts/innbc/INNBCTreasuryDAO.sol:60"
+            },
+            {
+              "label": "activeProposalIndexPlusOne",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_mapping(t_uint256,t_uint256)",
+              "contract": "INNBCTreasuryDAO",
+              "src": "contracts/innbc/INNBCTreasuryDAO.sol:61"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_uint256)dyn_storage": {
+              "label": "uint256[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_enum(ProposalType)9660": {
+              "label": "enum INNBCTreasuryDAO.ProposalType",
+              "members": [
+                "Transfer",
+                "Burn",
+                "Lock",
+                "Unlock",
+                "ERC20Transfer"
+              ],
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+              "label": "mapping(uint256 => mapping(address => bool))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Proposal)9680_storage)": {
+              "label": "mapping(uint256 => struct INNBCTreasuryDAO.Proposal)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_uint256)": {
+              "label": "mapping(uint256 => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Proposal)9680_storage": {
+              "label": "struct INNBCTreasuryDAO.Proposal",
+              "members": [
+                {
+                  "label": "proposalType",
+                  "type": "t_enum(ProposalType)9660",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "target",
+                  "type": "t_address",
+                  "offset": 1,
+                  "slot": "0"
+                },
+                {
+                  "label": "token",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "amount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "yesVotes",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "noVotes",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "deadlineBlock",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "finalized",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "passed",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "6"
+                }
+              ],
+              "numberOfBytes": "224"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCValidatorGovernance.sol:INNBCValidatorGovernance": {
+        "src": "contracts/innbc/INNBCValidatorGovernance.sol:10",
+        "version": {
+          "withMetadata": "a09485f25649a3d7fb40458047da3b474c193f99604c3ce4844d5b5d56f41a66",
+          "withoutMetadata": "01769dd748a5f1feb06f15227f7d2819d74bb108bccf486f9c2ce426b0f472a0",
+          "linkedWithoutMetadata": "01769dd748a5f1feb06f15227f7d2819d74bb108bccf486f9c2ce426b0f472a0"
+        },
+        "inherit": [],
+        "libraries": [
+          "contracts/innbc/INNBCGovernanceElectorate.sol:INNBCGovernanceElectorate"
+        ],
+        "methods": [
+          "initialize(address,uint8)",
+          "getActiveProposalIDs()",
+          "createWhitelistProposal(address)",
+          "createRemoveProposal(address)",
+          "createEmergencyRemoveProposal(address)",
+          "createUpdateMinimumStakeProposal(uint256)",
+          "createUseShortProposalDurationProposal()",
+          "createUseStandardProposalDurationProposal()",
+          "createUseLongProposalDurationProposal()",
+          "vote(uint256,bool)",
+          "finalizeProposal(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "validatorRegistry",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "INNBCValidatorGovernance",
+              "src": "contracts/innbc/INNBCValidatorGovernance.sol:47"
+            },
+            {
+              "label": "initialized",
+              "offset": 20,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "INNBCValidatorGovernance",
+              "src": "contracts/innbc/INNBCValidatorGovernance.sol:48"
+            },
+            {
+              "label": "proposalDurationPreset",
+              "offset": 21,
+              "slot": "0",
+              "type": "t_enum(ProposalDurationPreset)10736",
+              "contract": "INNBCValidatorGovernance",
+              "src": "contracts/innbc/INNBCValidatorGovernance.sol:50"
+            },
+            {
+              "label": "proposalDurationBlocks",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_uint256",
+              "contract": "INNBCValidatorGovernance",
+              "src": "contracts/innbc/INNBCValidatorGovernance.sol:51"
+            },
+            {
+              "label": "nextProposalID",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "INNBCValidatorGovernance",
+              "src": "contracts/innbc/INNBCValidatorGovernance.sol:52"
+            },
+            {
+              "label": "proposals",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_uint256,t_struct(Proposal)10757_storage)",
+              "contract": "INNBCValidatorGovernance",
+              "src": "contracts/innbc/INNBCValidatorGovernance.sol:54"
+            },
+            {
+              "label": "hasVoted",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))",
+              "contract": "INNBCValidatorGovernance",
+              "src": "contracts/innbc/INNBCValidatorGovernance.sol:55"
+            },
+            {
+              "label": "activeProposalIDs",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_array(t_uint256)dyn_storage",
+              "contract": "INNBCValidatorGovernance",
+              "src": "contracts/innbc/INNBCValidatorGovernance.sol:57"
+            },
+            {
+              "label": "activeProposalIndexPlusOne",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_mapping(t_uint256,t_uint256)",
+              "contract": "INNBCValidatorGovernance",
+              "src": "contracts/innbc/INNBCValidatorGovernance.sol:58"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_uint256)dyn_storage": {
+              "label": "uint256[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_enum(ProposalDurationPreset)10736": {
+              "label": "enum INNBCValidatorGovernance.ProposalDurationPreset",
+              "members": [
+                "None",
+                "Short",
+                "Standard",
+                "Long"
+              ],
+              "numberOfBytes": "1"
+            },
+            "t_enum(ProposalType)10731": {
+              "label": "enum INNBCValidatorGovernance.ProposalType",
+              "members": [
+                "Whitelist",
+                "Remove",
+                "EmergencyRemove",
+                "UpdateMinimumStake",
+                "UpdateProposalDuration"
+              ],
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+              "label": "mapping(uint256 => mapping(address => bool))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Proposal)10757_storage)": {
+              "label": "mapping(uint256 => struct INNBCValidatorGovernance.Proposal)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_uint256)": {
+              "label": "mapping(uint256 => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Proposal)10757_storage": {
+              "label": "struct INNBCValidatorGovernance.Proposal",
+              "members": [
+                {
+                  "label": "proposalType",
+                  "type": "t_enum(ProposalType)10731",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "target",
+                  "type": "t_address",
+                  "offset": 1,
+                  "slot": "0"
+                },
+                {
+                  "label": "newMinimumStake",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "newProposalDurationPreset",
+                  "type": "t_enum(ProposalDurationPreset)10736",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "yesVotes",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "noVotes",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "deadlineBlock",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "finalized",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "passed",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "6"
+                }
+              ],
+              "numberOfBytes": "224"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCValidatorRegistry.sol:IINNBCRegistryNativeToken": {
+        "src": "contracts/innbc/INNBCValidatorRegistry.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)",
+          "transfer(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/innbc/INNBCValidatorRegistry.sol:INNBCValidatorRegistry": {
+        "src": "contracts/innbc/INNBCValidatorRegistry.sol:16",
+        "version": {
+          "withMetadata": "8ad06e04b3849551110a9ea8dfa2f0508b6fa0304f7e804b112dfca68cdb75b2",
+          "withoutMetadata": "f0714c2e01d18e022f80d437c4d6f07c47225a468646c5dda976a92765e3a8e3",
+          "linkedWithoutMetadata": "f0714c2e01d18e022f80d437c4d6f07c47225a468646c5dda976a92765e3a8e3"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "initialize(address,uint256,uint8,address,address,uint256)",
+          "registerValidator(address,bytes,bytes,string,uint256)",
+          "increaseStake(uint256)",
+          "unstake(uint256)",
+          "updateRewardAddress(address)",
+          "updateLibP2PPeerID(string)",
+          "updateBLSKey(bytes,bytes)",
+          "whitelistValidator(address)",
+          "removeValidator(address)",
+          "updateMinimumStake(uint256)",
+          "updateProposalDurationPreset(uint8)",
+          "getActiveValidators()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "genesisValidator",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:51"
+            },
+            {
+              "label": "validatorGovernance",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:52"
+            },
+            {
+              "label": "nativeToken",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_address",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:54"
+            },
+            {
+              "label": "initialized",
+              "offset": 20,
+              "slot": "2",
+              "type": "t_bool",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:56"
+            },
+            {
+              "label": "registryActivated",
+              "offset": 21,
+              "slot": "2",
+              "type": "t_bool",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:58"
+            },
+            {
+              "label": "activationEpoch",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_uint256",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:59"
+            },
+            {
+              "label": "minimumStake",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_uint256",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:60"
+            },
+            {
+              "label": "proposalDurationPreset",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_enum(ProposalDurationPreset)11783",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:62"
+            },
+            {
+              "label": "proposalDurationBlocks",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_uint256",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:63"
+            },
+            {
+              "label": "activeValidatorCount",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_uint256",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:64"
+            },
+            {
+              "label": "validators",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_mapping(t_address,t_struct(ValidatorRecord)11800_storage)",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:66"
+            },
+            {
+              "label": "activeValidators",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:68"
+            },
+            {
+              "label": "activeValidatorIndexPlusOne",
+              "offset": 0,
+              "slot": "10",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:69"
+            },
+            {
+              "label": "rewardAddressOwner",
+              "offset": 0,
+              "slot": "11",
+              "type": "t_mapping(t_address,t_address)",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:71"
+            },
+            {
+              "label": "blsKeyOwner",
+              "offset": 0,
+              "slot": "12",
+              "type": "t_mapping(t_bytes32,t_address)",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:72"
+            },
+            {
+              "label": "libp2pPeerIDOwner",
+              "offset": 0,
+              "slot": "13",
+              "type": "t_mapping(t_bytes32,t_address)",
+              "contract": "INNBCValidatorRegistry",
+              "src": "contracts/innbc/INNBCValidatorRegistry.sol:73"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_bytes32": {
+              "label": "bytes32",
+              "numberOfBytes": "32"
+            },
+            "t_bytes_storage": {
+              "label": "bytes",
+              "numberOfBytes": "32"
+            },
+            "t_enum(ProposalDurationPreset)11783": {
+              "label": "enum INNBCValidatorRegistry.ProposalDurationPreset",
+              "members": [
+                "None",
+                "Short",
+                "Standard",
+                "Long"
+              ],
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_address)": {
+              "label": "mapping(address => address)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_struct(ValidatorRecord)11800_storage)": {
+              "label": "mapping(address => struct INNBCValidatorRegistry.ValidatorRecord)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_bytes32,t_address)": {
+              "label": "mapping(bytes32 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(ValidatorRecord)11800_storage": {
+              "label": "struct INNBCValidatorRegistry.ValidatorRecord",
+              "members": [
+                {
+                  "label": "operator",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "rewardAddress",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "blsKey",
+                  "type": "t_bytes_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "libp2pPeerID",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "stake",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "registered",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "whitelisted",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "5"
+                },
+                {
+                  "label": "blsProofVerified",
+                  "type": "t_bool",
+                  "offset": 2,
+                  "slot": "5"
+                }
+              ],
+              "numberOfBytes": "192"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/interfaces/child/validator/IValidatorSet.sol:IValidatorSet": {
+        "src": "contracts/interfaces/child/validator/IValidatorSet.sol:17",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "commitEpoch(uint256,(uint256,uint256,bytes32))",
+          "EPOCH_SIZE()",
+          "totalBlocks(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/interfaces/common/IBLS.sol:IBLS": {
+        "src": "contracts/interfaces/common/IBLS.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "verifySingle(uint256[2],uint256[4],uint256[2])",
+          "verifyMultiple(uint256[2],uint256[4][],uint256[2][])",
+          "verifyMultipleSameMsg(uint256[2],uint256[4][],uint256[2])",
+          "mapToPoint(uint256)",
+          "isValidSignature(uint256[2])",
+          "isOnCurveG1(uint256[2])",
+          "isOnCurveG2(uint256[4])",
+          "hashToPoint(bytes32,bytes)",
+          "hashToField(bytes32,bytes)",
+          "expandMsgTo96(bytes32,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/lib/GenesisProxy.sol:GenesisProxy": {
+        "src": "contracts/lib/GenesisProxy.sol:13",
+        "version": {
+          "withMetadata": "3961a3a6285ce7a34811f7cd52a3d732ee7b3b70edbacb10a855ad7ff22d27bd",
+          "withoutMetadata": "3961a3a6285ce7a34811f7cd52a3d732ee7b3b70edbacb10a855ad7ff22d27bd",
+          "linkedWithoutMetadata": "3961a3a6285ce7a34811f7cd52a3d732ee7b3b70edbacb10a855ad7ff22d27bd"
+        },
+        "inherit": [
+          "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol:TransparentUpgradeableProxy",
+          "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol:ERC1967Proxy",
+          "@openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol:ERC1967Upgrade",
+          "@openzeppelin/contracts/interfaces/IERC1967.sol:IERC1967",
+          "@openzeppelin/contracts/proxy/Proxy.sol:Proxy"
+        ],
+        "libraries": [],
+        "methods": [
+          "()",
+          "protectSetUpProxy(address)",
+          "setUpProxy(address,address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "GenesisProxy",
+            "src": "contracts/lib/GenesisProxy.sol:17"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/lib/ModExp.sol:ModexpInverse": {
+        "src": "contracts/lib/ModExp.sol:37",
+        "version": {
+          "withMetadata": "17c868d39bdcfc0611eb8df355322e782926f7be0931e8c13a1fa0cd500cd368",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/lib/ModExp.sol:ModexpSqrt": {
+        "src": "contracts/lib/ModExp.sol:366",
+        "version": {
+          "withMetadata": "e742023b52d50d01950de3d689781f5a26773bd8f18d9dc1750110aa8b7523f6",
+          "withoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db",
+          "linkedWithoutMetadata": "a64c6cf9c6ba9368f5132c93a0196b3204a7963dbb4dd05dfddb4ab23126b8db"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/mocks/INNBCAuditMocks.sol:IINNBCAuditPool": {
+        "src": "contracts/mocks/INNBCAuditMocks.sol:106",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "stake()",
+          "unstake(uint256)",
+          "claim()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/mocks/INNBCAuditMocks.sol:INNBCAuditBLS": {
+        "src": "contracts/mocks/INNBCAuditMocks.sol:80",
+        "version": {
+          "withMetadata": "36d5c347f9afc180fa3329bb90acfbed1a06f0e908bed8fb7d27045be8f5084f",
+          "withoutMetadata": "11d04661c7bb09c54f0e630bd328cae14c77336fa22c1c802d2f391d9b03f2bb",
+          "linkedWithoutMetadata": "11d04661c7bb09c54f0e630bd328cae14c77336fa22c1c802d2f391d9b03f2bb"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(bool,bool)",
+          "hashToPoint(bytes32,bytes)",
+          "verifySingle(uint256[2],uint256[4],uint256[2])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "valid",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "INNBCAuditBLS",
+              "src": "contracts/mocks/INNBCAuditMocks.sol:81"
+            },
+            {
+              "label": "callSuccess",
+              "offset": 1,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "INNBCAuditBLS",
+              "src": "contracts/mocks/INNBCAuditMocks.sol:82"
+            }
+          ],
+          "types": {
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/mocks/INNBCAuditMocks.sol:INNBCAuditReceiver": {
+        "src": "contracts/mocks/INNBCAuditMocks.sol:112",
+        "version": {
+          "withMetadata": "ef3bb31ea2dc73a86d15f250d23172845dffd23e98204e1d47177266cb48bb12",
+          "withoutMetadata": "c70e5f38256598f9aa5c5ca1e3275e9246be32d198901263a9d7520032e22c62",
+          "linkedWithoutMetadata": "c70e5f38256598f9aa5c5ca1e3275e9246be32d198901263a9d7520032e22c62"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(bool,bool)",
+          "stakeIn(address)",
+          "claimFromPool()",
+          "unstakeFromPool(uint256)",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "pool",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_contract(IINNBCAuditPool)13847",
+              "contract": "INNBCAuditReceiver",
+              "src": "contracts/mocks/INNBCAuditMocks.sol:113"
+            },
+            {
+              "label": "rejectPayment",
+              "offset": 20,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "INNBCAuditReceiver",
+              "src": "contracts/mocks/INNBCAuditMocks.sol:114"
+            },
+            {
+              "label": "attemptReentry",
+              "offset": 21,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "INNBCAuditReceiver",
+              "src": "contracts/mocks/INNBCAuditMocks.sol:115"
+            },
+            {
+              "label": "reentryAttempted",
+              "offset": 22,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "INNBCAuditReceiver",
+              "src": "contracts/mocks/INNBCAuditMocks.sol:116"
+            },
+            {
+              "label": "reentrySucceeded",
+              "offset": 23,
+              "slot": "0",
+              "type": "t_bool",
+              "contract": "INNBCAuditReceiver",
+              "src": "contracts/mocks/INNBCAuditMocks.sol:117"
+            }
+          ],
+          "types": {
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_contract(IINNBCAuditPool)13847": {
+              "label": "contract IINNBCAuditPool",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/mocks/INNBCAuditMocks.sol:INNBCAuditToken": {
+        "src": "contracts/mocks/INNBCAuditMocks.sol:11",
+        "version": {
+          "withMetadata": "c2946839f8cd30a40162ca6261f1a23e434dfdec33a58897591bbbae161f904c",
+          "withoutMetadata": "6d8167468d830911454708c0c54c38c711e59299c5ba0aacac5a3e125dde84d4",
+          "linkedWithoutMetadata": "6d8167468d830911454708c0c54c38c711e59299c5ba0aacac5a3e125dde84d4"
+        },
+        "inherit": [
+          "@openzeppelin/contracts/token/ERC20/ERC20.sol:ERC20",
+          "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:IERC20Metadata",
+          "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20",
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(address,uint256)",
+          "setFailTransfers(bool)",
+          "setFailBurn(bool)",
+          "setFailMintRecipient(address)",
+          "transfer(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "burn(uint256)",
+          "issueEmergencyBlockReward(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "INNBCAuditToken",
+            "src": "contracts/mocks/INNBCAuditMocks.sol:16"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:39"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:41"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:43"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:45"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:46"
+            },
+            {
+              "label": "failTransfers",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_bool",
+              "contract": "INNBCAuditToken",
+              "src": "contracts/mocks/INNBCAuditMocks.sol:12"
+            },
+            {
+              "label": "failBurn",
+              "offset": 1,
+              "slot": "5",
+              "type": "t_bool",
+              "contract": "INNBCAuditToken",
+              "src": "contracts/mocks/INNBCAuditMocks.sol:13"
+            },
+            {
+              "label": "failMintRecipient",
+              "offset": 2,
+              "slot": "5",
+              "type": "t_address",
+              "contract": "INNBCAuditToken",
+              "src": "contracts/mocks/INNBCAuditMocks.sol:14"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/mocks/INNBCAuditMocks.sol:INNBCAuditUpgradeV1": {
+        "src": "contracts/mocks/INNBCAuditMocks.sol:150",
+        "version": {
+          "withMetadata": "2ef167ce1a5ab79c9e11fc078965b237b7f64c8ba6cfc373d805cf36609a758f",
+          "withoutMetadata": "7f8b10246b9ebb1446022e4a0c597b06d823f530b5e8d71f481ac02621e74443",
+          "linkedWithoutMetadata": "7f8b10246b9ebb1446022e4a0c597b06d823f530b5e8d71f481ac02621e74443"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "setValue(uint256)",
+          "version()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "value",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "INNBCAuditUpgradeV1",
+              "src": "contracts/mocks/INNBCAuditMocks.sol:151"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/mocks/INNBCAuditMocks.sol:INNBCAuditUpgradeV2": {
+        "src": "contracts/mocks/INNBCAuditMocks.sol:162",
+        "version": {
+          "withMetadata": "4c1ffe850d509e59d6d8c0cefa9bf626926cc9dab00e6d3fad447a30e20677d9",
+          "withoutMetadata": "eba89b9bcb7f09e4f8ea963869391993f9e20e4ce55296ec28bc2ef95b66848c",
+          "linkedWithoutMetadata": "eba89b9bcb7f09e4f8ea963869391993f9e20e4ce55296ec28bc2ef95b66848c"
+        },
+        "inherit": [
+          "contracts/mocks/INNBCAuditMocks.sol:INNBCAuditUpgradeV1"
+        ],
+        "libraries": [],
+        "methods": [
+          "version()",
+          "initializeUpgrade(uint256,bool)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "value",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "INNBCAuditUpgradeV1",
+              "src": "contracts/mocks/INNBCAuditMocks.sol:151"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/mocks/MockINNBCBlockRewardCommunityRewardPool.sol:MockINNBCBlockRewardCommunityRewardPool": {
+        "src": "contracts/mocks/MockINNBCBlockRewardCommunityRewardPool.sol:5",
+        "version": {
+          "withMetadata": "80e7453c274baba942fa76bfdc15e34ab39499670a5bcbf82caa0202a998ebb0",
+          "withoutMetadata": "779d2539b4cd228ded1b665fae0ddae646ad411788a5b6e198e8d342562f07fa",
+          "linkedWithoutMetadata": "779d2539b4cd228ded1b665fae0ddae646ad411788a5b6e198e8d342562f07fa"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "setCommunityRewardRateBps(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "communityRewardRateBps",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "MockINNBCBlockRewardCommunityRewardPool",
+              "src": "contracts/mocks/MockINNBCBlockRewardCommunityRewardPool.sol:6"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/mocks/MockINNBCBlockRewardNativeToken.sol:MockINNBCBlockRewardNativeToken": {
+        "src": "contracts/mocks/MockINNBCBlockRewardNativeToken.sol:5",
+        "version": {
+          "withMetadata": "5a54681cb4e7c2f375fbb6cdb4494dd2f390cab37a17b2188ce120642cbb614d",
+          "withoutMetadata": "6369fa9500adbc20e3093b5c89749bafeb96cdc5b8955bbb006ab7a0d776a8e6",
+          "linkedWithoutMetadata": "6369fa9500adbc20e3093b5c89749bafeb96cdc5b8955bbb006ab7a0d776a8e6"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(uint256)",
+          "issueEmergencyBlockReward(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "MockINNBCBlockRewardNativeToken",
+            "src": "contracts/mocks/MockINNBCBlockRewardNativeToken.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "totalSupply",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "MockINNBCBlockRewardNativeToken",
+              "src": "contracts/mocks/MockINNBCBlockRewardNativeToken.sol:6"
+            },
+            {
+              "label": "balanceOf",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "MockINNBCBlockRewardNativeToken",
+              "src": "contracts/mocks/MockINNBCBlockRewardNativeToken.sol:7"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/mocks/MockINNBCValidatorRegistry.sol:MockINNBCValidatorRegistry": {
+        "src": "contracts/mocks/MockINNBCValidatorRegistry.sol:5",
+        "version": {
+          "withMetadata": "610ee01c7c721cf05cdc753ffbee37c284a25168dc994f9b8b44be75c6ef4136",
+          "withoutMetadata": "a5555bb614bedeaa114e5bde325ba624d05468b24b15b9e1a8f3d910c35d698a",
+          "linkedWithoutMetadata": "a5555bb614bedeaa114e5bde325ba624d05468b24b15b9e1a8f3d910c35d698a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "activeValidatorCount()",
+          "getActiveValidators()",
+          "validators(address)",
+          "addActiveValidator(address,address,uint256)",
+          "whitelistValidator(address)",
+          "removeValidator(address)",
+          "updateMinimumStake(uint256)",
+          "updateProposalDurationPreset(uint8)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "proposalDurationBlocks",
+            "src": "contracts/mocks/MockINNBCValidatorRegistry.sol:17"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "minimumStake",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "MockINNBCValidatorRegistry",
+              "src": "contracts/mocks/MockINNBCValidatorRegistry.sol:16"
+            },
+            {
+              "label": "proposalDurationBlocks",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_uint256",
+              "contract": "MockINNBCValidatorRegistry",
+              "src": "contracts/mocks/MockINNBCValidatorRegistry.sol:17"
+            },
+            {
+              "label": "nativeToken",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_address",
+              "contract": "MockINNBCValidatorRegistry",
+              "src": "contracts/mocks/MockINNBCValidatorRegistry.sol:18"
+            },
+            {
+              "label": "activeValidators",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "MockINNBCValidatorRegistry",
+              "src": "contracts/mocks/MockINNBCValidatorRegistry.sol:20"
+            },
+            {
+              "label": "validatorData",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_address,t_struct(Validator)14091_storage)",
+              "contract": "MockINNBCValidatorRegistry",
+              "src": "contracts/mocks/MockINNBCValidatorRegistry.sol:21"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_bytes_storage": {
+              "label": "bytes",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_struct(Validator)14091_storage)": {
+              "label": "mapping(address => struct MockINNBCValidatorRegistry.Validator)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Validator)14091_storage": {
+              "label": "struct MockINNBCValidatorRegistry.Validator",
+              "members": [
+                {
+                  "label": "validatorOperator",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "rewardAddress",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "blsKey",
+                  "type": "t_bytes_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "libp2pPeerID",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "stake",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "registered",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "whitelisted",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "5"
+                }
+              ],
+              "numberOfBytes": "192"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.19"
+      }
+    }
+  ]
+}

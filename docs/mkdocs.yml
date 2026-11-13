@@ -1,0 +1,102 @@
+# START ALPHA CHANGE 1026 -- rename docs site for INNBC --
+site_name: INNBC Chain docs
+# FINISH ALPHA CHANGE 1026 -- rename docs site for INNBC --
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+
+nav:
+  - What is INNBC Chain: index.md
+  - Quickstart: quickstart.md
+  - System design:
+      - Overview:  design/overview.md
+      - Consensus:
+          - Consensus protocol: design/consensus/innbcbft/protocol.md
+          - INNBC Byzantine Fault Tolerance: design/consensus/innbcbft/overview.md
+          - Istanbul Byzantine Fault Tolerance (IBFT) 2.0:  design/consensus/innbcbft/ibft.md
+      # START ALPHA CHANGE 794 -- remove legacy bridge design docs from navigation --
+      # FINISH ALPHA CHANGE 794 -- remove legacy bridge design docs from navigation --
+      - Networking: design/libp2p.md
+      - Runtime:
+          - Overview:  design/runtime/overview.md
+          - Access control list:  design/runtime/allowlist.md
+      - Blockchain:  design/blockchain.md
+      - MemoryPool:  design/mempool.md
+      - Transaction pool:  design/txpool.md
+      - Transaction relayer:  design/txrelayer.md
+      - JSON-RPC:  design/jsonrpc.md
+      - GRPC:  design/grpc.md
+  - Build an INNBC chain:
+      - Prepare your environment:
+          - System requirements:  operate/system.md
+          - Install binaries:  operate/install.md    
+      - Deploy a chain:
+          - Get started:  operate/deploy/index.md
+          - Build a local test workspace:  operate/deploy/local-chain.md
+          - Configure genesis:  operate/deploy/genesis.md
+          # START ALPHA CHANGE 795 -- remove legacy rootchain deployment docs from navigation --
+          # FINISH ALPHA CHANGE 795 -- remove legacy rootchain deployment docs from navigation --
+          - How to configure the initial validator set:  operate/deploy/genesis-validators.md
+          - Start validator services:  operate/deploy/start-chain.md
+      - Operate your chain:
+          - Access control:
+              - How to add and remove accounts:  operate/deploy/access-control/allowlist-general.md
+          # START ALPHA CHANGE 796 -- remove legacy rootchain staking and bridge transfer docs from navigation --
+          # FINISH ALPHA CHANGE 796 -- remove legacy rootchain staking and bridge transfer docs from navigation --
+          - Upgrade your chain:
+              - Upgrade using hardfork:  operate/deploy/upgrades/hardfork.md
+              - Edge v1.1 upgrade requirements:  operate/deploy/upgrades/v1.1.md
+  - Reference:
+      #- Contracts:
+      #   - Checkpoint manager: contracts/checkpoint-manager.md
+      #   - Exit helper: contracts/exit-helper.md
+      #   - Reward pool: contracts/reward-pool.md
+      #   - State receiver: contracts/state-receiver.md
+      #   - State sender: contracts/state-sender.md
+      #   - Validator set: contracts/validator-set.md
+      #   - Withdrawal queue: contracts/withdrawal-queue.md
+      - Config parameter reference:  operate/param-reference.md 
+      - Smart contract interfaces:
+         # START ALPHA CHANGE 797 -- remove legacy bridge and predicate interface docs from navigation --
+         # START ALPHA CHANGE 3400 -- replace the deleted native-token page with the existing genesis reference --
+         - Native Token:
+             - INNBC Native Token: operate/deploy/genesis.md#native-token-configuration
+         # FINISH ALPHA CHANGE 3400 -- replace the deleted native-token page with the existing genesis reference --
+         # FINISH ALPHA CHANGE 797 -- remove legacy bridge and predicate interface docs from navigation --
+         # START ALPHA CHANGE 3432 -- identify the ValidatorSet epoch interface --
+         - Validators:
+             - ValidatorSet Epoch Interface: interfaces/validators/validator-set-base.md
+         # FINISH ALPHA CHANGE 3432 -- identify the ValidatorSet epoch interface --
+         # START ALPHA CHANGE 798 -- remove legacy rootchain staking interfaces from navigation --
+         # FINISH ALPHA CHANGE 798 -- remove legacy rootchain staking interfaces from navigation --
+         # START ALPHA CHANGE 3765 -- remove retired standalone G2 interface navigation --
+         - Cryptography:
+             - BLS:  interfaces/cryptography/bls.md
+         # FINISH ALPHA CHANGE 3765 -- remove retired standalone G2 interface navigation --
+      - RPC APIs:
+         - Ethereum:  api/json-rpc-eth.md
+         - Net:  api/json-rpc-net.md
+         - Web3:  api/json-rpc-web3.md
+         # START ALPHA CHANGE 3400 -- distinguish local operators and unexposed tracing reference from public namespaces --
+         - Transaction-Pool Operator Interface: api/json-rpc-txpool.md
+         - Unexposed Debug Reference: api/json-rpc-debug.md
+         # FINISH ALPHA CHANGE 3400 -- distinguish local operators and unexposed tracing reference from public namespaces --
+         # START ALPHA CHANGE 799 -- remove legacy bridge JSON-RPC docs from navigation --
+         # FINISH ALPHA CHANGE 799 -- remove legacy bridge JSON-RPC docs from navigation --
+      - Performance benchmarks:  operate/benchmarks.md
+  - Disclaimer: disclaimer.md
+
+
+
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed
+
+
+validation:
+  absolute_links: warn

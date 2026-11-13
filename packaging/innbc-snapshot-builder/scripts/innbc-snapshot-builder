@@ -1,0 +1,161 @@
+#!/usr/bin/env bash
+# START ALPHA CHANGE 1847 -- run snapshot builder from its installed environment --
+set -euo pipefail
+
+CONFIG_PATH="/etc/innbc/snapshot-builder.env"
+INNBC_BINARY="/usr/local/bin/innbc-chain"
+
+# START ALPHA CHANGE 1928 -- drop snapshot construction to the INNBC runtime account --
+if [ "$(id -u)" -ne 0 ]; then
+  echo "The snapshot builder wrapper must be run as root." >&2
+  exit 1
+fi
+
+if ! id -u innbc >/dev/null 2>&1; then
+  echo "Missing INNBC runtime account: innbc" >&2
+  exit 1
+fi
+
+if ! command -v runuser >/dev/null 2>&1; then
+  echo "The runuser command is required to start the snapshot builder as innbc." >&2
+  exit 1
+fi
+# FINISH ALPHA CHANGE 1928 -- drop snapshot construction to the INNBC runtime account --
+
+# START ALPHA CHANGE 2082 -- dispatch all independent snapshot and archive operations --
+# START ALPHA CHANGE 2277 -- advertise environment-driven database backups --
+usage() {
+  echo "Usage: innbc-snapshot-builder <segmented|checkpoint|archive|recovery-checkpoint|backup>" >&2
+}
+# FINISH ALPHA CHANGE 2277 -- advertise environment-driven database backups --
+
+require_value() {
+  local variable_name="$1"
+
+  if [ -z "${!variable_name:-}" ]; then
+    echo "Missing required snapshot builder setting: ${variable_name}" >&2
+    exit 1
+  fi
+}
+
+if [ "$#" -ne 1 ]; then
+  usage
+  exit 2
+fi
+
+SNAPSHOT_COMMAND="$1"
+
+# START ALPHA CHANGE 2286 -- enclose complete backup command selection --
+case "${SNAPSHOT_COMMAND}" in
+  segmented|checkpoint|archive|recovery-checkpoint|backup)
+    ;;
+  *)
+    echo "Unsupported snapshot builder command: ${SNAPSHOT_COMMAND}" >&2
+    usage
+    exit 2
+    ;;
+esac
+# FINISH ALPHA CHANGE 2286 -- enclose complete backup command selection --
+
+if [ ! -f "${CONFIG_PATH}" ]; then
+  echo "Missing snapshot builder configuration: ${CONFIG_PATH}" >&2
+  exit 1
+fi
+
+if [ ! -x "${INNBC_BINARY}" ]; then
+  echo "Missing executable INNBC binary: ${INNBC_BINARY}" >&2
+  exit 1
+fi
+
+# The active configuration is installed root-owned with mode 0600.
+# shellcheck disable=SC1090
+source "${CONFIG_PATH}"
+
+require_value INNBC_SNAPSHOT_BUILDER_CHAIN
+require_value INNBC_SNAPSHOT_BUILDER_SOURCE_DATA_DIR
+require_value INNBC_SNAPSHOT_BUILDER_MDBX_MAP_SIZE_GB
+
+case "${SNAPSHOT_COMMAND}" in
+  segmented|checkpoint)
+    require_value INNBC_SNAPSHOT_BUILDER_OUTPUT_ROOT
+    require_value INNBC_SNAPSHOT_BUILDER_RETENTION_BLOCKS
+    require_value INNBC_SNAPSHOT_BUILDER_SEGMENT_BLOCKS
+
+    # START ALPHA CHANGE 3067 -- select the MDBX allowance for the snapshot consumer role --
+    snapshot_mdbx_map_size_gb="${INNBC_SNAPSHOT_BUILDER_MDBX_MAP_SIZE_GB}"
+    # START ALPHA CHANGE 3078 -- require explicit configuration for segmented snapshot storage --
+    if [ "${SNAPSHOT_COMMAND}" = segmented ]; then
+      require_value INNBC_SNAPSHOT_BUILDER_SEGMENTED_MDBX_MAP_SIZE_GB
+      snapshot_mdbx_map_size_gb="${INNBC_SNAPSHOT_BUILDER_SEGMENTED_MDBX_MAP_SIZE_GB}"
+    fi
+    # FINISH ALPHA CHANGE 3078 -- require explicit configuration for segmented snapshot storage --
+
+    exec runuser --user innbc -- \
+      "${INNBC_BINARY}" snapshot build "${SNAPSHOT_COMMAND}" \
+      --chain "${INNBC_SNAPSHOT_BUILDER_CHAIN}" \
+      --source-data-dir "${INNBC_SNAPSHOT_BUILDER_SOURCE_DATA_DIR}" \
+      --output-root "${INNBC_SNAPSHOT_BUILDER_OUTPUT_ROOT}" \
+      --retention-blocks "${INNBC_SNAPSHOT_BUILDER_RETENTION_BLOCKS}" \
+      --segment-blocks "${INNBC_SNAPSHOT_BUILDER_SEGMENT_BLOCKS}" \
+      --mdbx-page-size-bytes="${INNBC_SNAPSHOT_BUILDER_MDBX_PAGE_SIZE_BYTES:-4096}" \
+      --mdbx-map-size-gb "${snapshot_mdbx_map_size_gb}"
+    # START ALPHA CHANGE 3480 -- pass defaultable snapshot destination pages --
+    # FINISH ALPHA CHANGE 3480 -- pass defaultable snapshot destination pages --
+    # FINISH ALPHA CHANGE 3067 -- select the MDBX allowance for the snapshot consumer role --
+    ;;
+
+  # START ALPHA CHANGE 2277 -- dispatch database backup without snapshot-specific settings --
+  backup)
+    require_value INNBC_DATABASE_BACKUP_OUTPUT_ROOT
+
+    exec runuser --user innbc -- \
+      "${INNBC_BINARY}" snapshot backup \
+      --chain "${INNBC_SNAPSHOT_BUILDER_CHAIN}" \
+      --data-dir "${INNBC_SNAPSHOT_BUILDER_SOURCE_DATA_DIR}" \
+      --out "${INNBC_DATABASE_BACKUP_OUTPUT_ROOT}" \
+      --mdbx-page-size-bytes="${INNBC_SNAPSHOT_BUILDER_MDBX_PAGE_SIZE_BYTES:-4096}" \
+      --mdbx-map-size-gb "${INNBC_SNAPSHOT_BUILDER_MDBX_MAP_SIZE_GB}"
+    # START ALPHA CHANGE 3480 -- pass defaultable backup destination pages --
+    # FINISH ALPHA CHANGE 3480 -- pass defaultable backup destination pages --
+    ;;
+  # FINISH ALPHA CHANGE 2277 -- dispatch database backup without snapshot-specific settings --
+
+  archive)
+    require_value INNBC_HISTORY_ARCHIVE_OUTPUT_ROOT
+    require_value INNBC_HISTORY_ARCHIVE_SEGMENT_BLOCKS
+    require_value INNBC_HISTORY_ARCHIVE_MAX_INDEX_RECORDS
+
+    exec runuser --user innbc -- \
+      "${INNBC_BINARY}" snapshot archive \
+      --chain "${INNBC_SNAPSHOT_BUILDER_CHAIN}" \
+      --source-data-dir "${INNBC_SNAPSHOT_BUILDER_SOURCE_DATA_DIR}" \
+      --output-root "${INNBC_HISTORY_ARCHIVE_OUTPUT_ROOT}" \
+      --segment-blocks "${INNBC_HISTORY_ARCHIVE_SEGMENT_BLOCKS}" \
+      --max-index-records "${INNBC_HISTORY_ARCHIVE_MAX_INDEX_RECORDS}" \
+      --mdbx-page-size-bytes="${INNBC_SNAPSHOT_BUILDER_MDBX_PAGE_SIZE_BYTES:-4096}" \
+      --mdbx-map-size-gb "${INNBC_SNAPSHOT_BUILDER_MDBX_MAP_SIZE_GB}"
+    # START ALPHA CHANGE 3480 -- pass defaultable archive destination pages --
+    # FINISH ALPHA CHANGE 3480 -- pass defaultable archive destination pages --
+    ;;
+
+  recovery-checkpoint)
+    require_value INNBC_SNAPSHOT_BUILDER_OUTPUT_ROOT
+    require_value INNBC_HISTORY_ARCHIVE_OUTPUT_ROOT
+    require_value INNBC_RECOVERY_CHECKPOINT_MINIMUM_RETENTION_BLOCKS
+
+    exec runuser --user innbc -- \
+      "${INNBC_BINARY}" snapshot recovery-checkpoint \
+      --chain "${INNBC_SNAPSHOT_BUILDER_CHAIN}" \
+      --source-data-dir "${INNBC_SNAPSHOT_BUILDER_SOURCE_DATA_DIR}" \
+      --snapshot-output-root "${INNBC_SNAPSHOT_BUILDER_OUTPUT_ROOT}" \
+      --archive-output-root "${INNBC_HISTORY_ARCHIVE_OUTPUT_ROOT}" \
+      --minimum-retention-blocks \
+        "${INNBC_RECOVERY_CHECKPOINT_MINIMUM_RETENTION_BLOCKS}" \
+      --mdbx-page-size-bytes="${INNBC_SNAPSHOT_BUILDER_MDBX_PAGE_SIZE_BYTES:-4096}" \
+      --mdbx-map-size-gb "${INNBC_SNAPSHOT_BUILDER_MDBX_MAP_SIZE_GB}"
+    # START ALPHA CHANGE 3480 -- pass defaultable recovery destination pages --
+    # FINISH ALPHA CHANGE 3480 -- pass defaultable recovery destination pages --
+    ;;
+esac
+# FINISH ALPHA CHANGE 2082 -- dispatch all independent snapshot and archive operations --
+# FINISH ALPHA CHANGE 1847 -- run snapshot builder from its installed environment --
